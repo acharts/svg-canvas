@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>基本图形</title>
+
+</head>
+<body>
+	<div id="s1">
+		
+	</div>
+	<script src="js/svg.js"></script>
+	<script>
+		var Util = window.SvgUtil,
+      c = document.getElementById('s1');
+
+    var svg = Util.svg({width : 300,height : 300}),
+    line = Util.svgNode('line',{
+      x1 : 0,
+      y1 : 0,
+      x2 : 100,
+      y2 : 100,
+      stroke : 'red'
+    });
+    svg.appendChild(line);
+    c.appendChild(svg);
+
+	</script>
+</body>
+</html>

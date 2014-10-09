@@ -1,0 +1,7562 @@
+{
+  "instrumentation": "node-jscoverage",
+  "sloc": 495,
+  "hits": 182,
+  "misses": 313,
+  "coverage": 36.76767676767677,
+  "files": [
+    {
+      "filename": "/Users/dxq613/Desktop/work/web/graphic/svg/index.js",
+      "coverage": 100,
+      "hits": 2,
+      "misses": 0,
+      "sloc": 2,
+      "source": {
+        "1": {
+          "source": "var svg = require('./src/canvas');",
+          "coverage": 1
+        },
+        "2": {
+          "source": "",
+          "coverage": ""
+        },
+        "3": {
+          "source": "module.exports = svg;",
+          "coverage": 1
+        },
+        "4": {
+          "source": "",
+          "coverage": ""
+        }
+      }
+    },
+    {
+      "filename": "/Users/dxq613/Desktop/work/web/graphic/svg/src/base.js",
+      "coverage": 62.22222222222222,
+      "hits": 56,
+      "misses": 34,
+      "sloc": 90,
+      "source": {
+        "1": {
+          "source": "  ",
+          "coverage": ""
+        },
+        "2": {
+          "source": "var ",
+          "coverage": 1
+        },
+        "3": {
+          "source": " ",
+          "coverage": ""
+        },
+        "4": {
+          "source": "  Util = require('./util');",
+          "coverage": ""
+        },
+        "5": {
+          "source": "",
+          "coverage": ""
+        },
+        "6": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "7": {
+          "source": " * @class Chart.Canvas.Base",
+          "coverage": ""
+        },
+        "8": {
+          "source": " * 图形控件或者分组的基类",
+          "coverage": ""
+        },
+        "9": {
+          "source": " */",
+          "coverage": ""
+        },
+        "10": {
+          "source": "var Base = function(cfg){",
+          "coverage": 1
+        },
+        "11": {
+          "source": "  this.cfg = cfg;",
+          "coverage": 2
+        },
+        "12": {
+          "source": "  this._attrs = {",
+          "coverage": 2
+        },
+        "13": {
+          "source": "    autoRender : true,",
+          "coverage": ""
+        },
+        "14": {
+          "source": "    visible : true",
+          "coverage": ""
+        },
+        "15": {
+          "source": "  };",
+          "coverage": ""
+        },
+        "16": {
+          "source": "  this.events = {};",
+          "coverage": 2
+        },
+        "17": {
+          "source": "  var defaultCfg = this.getDefaultCfg();",
+          "coverage": 2
+        },
+        "18": {
+          "source": "  Util.mix(this._attrs,defaultCfg,cfg);",
+          "coverage": 2
+        },
+        "19": {
+          "source": "  if(this.get('autoRender')){",
+          "coverage": 2
+        },
+        "20": {
+          "source": "    this.render();",
+          "coverage": 2
+        },
+        "21": {
+          "source": "  }",
+          "coverage": ""
+        },
+        "22": {
+          "source": "      ",
+          "coverage": ""
+        },
+        "23": {
+          "source": "};",
+          "coverage": ""
+        },
+        "24": {
+          "source": "",
+          "coverage": ""
+        },
+        "25": {
+          "source": "Base.ATTRS = {",
+          "coverage": 1
+        },
+        "26": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "27": {
+          "source": "   * 所在父元素中的优先级，仅在父元素排序时有效",
+          "coverage": ""
+        },
+        "28": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "29": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "30": {
+          "source": "  zIndex : null,",
+          "coverage": ""
+        },
+        "31": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "32": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "33": {
+          "source": "   * 底层使用了raphael 所以此属性对应raphael的对对象",
+          "coverage": ""
+        },
+        "34": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "35": {
+          "source": "  el : null,",
+          "coverage": ""
+        },
+        "36": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "37": {
+          "source": "   * svg或者vml对象",
+          "coverage": ""
+        },
+        "38": {
+          "source": "   * @type {HTMLElement}",
+          "coverage": ""
+        },
+        "39": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "40": {
+          "source": "  node : null,",
+          "coverage": ""
+        },
+        "41": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "42": {
+          "source": "   * 画布",
+          "coverage": ""
+        },
+        "43": {
+          "source": "   * @type {Chart.Canvas}",
+          "coverage": ""
+        },
+        "44": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "45": {
+          "source": "  canvas : null,",
+          "coverage": ""
+        },
+        "46": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "47": {
+          "source": "   * 是否显示",
+          "coverage": ""
+        },
+        "48": {
+          "source": "   * @type {Boolean}",
+          "coverage": ""
+        },
+        "49": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "50": {
+          "source": "  visible : true  ",
+          "coverage": ""
+        },
+        "51": {
+          "source": "",
+          "coverage": ""
+        },
+        "52": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "53": {
+          "source": "   * @event hide",
+          "coverage": ""
+        },
+        "54": {
+          "source": "   * 隐藏",
+          "coverage": ""
+        },
+        "55": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "56": {
+          "source": "  ",
+          "coverage": ""
+        },
+        "57": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "58": {
+          "source": "   * @event 显示",
+          "coverage": ""
+        },
+        "59": {
+          "source": "   * 显示",
+          "coverage": ""
+        },
+        "60": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "61": {
+          "source": "  ",
+          "coverage": ""
+        },
+        "62": {
+          "source": "};",
+          "coverage": ""
+        },
+        "63": {
+          "source": "",
+          "coverage": ""
+        },
+        "64": {
+          "source": "Util.augment(Base,{",
+          "coverage": 1
+        },
+        "65": {
+          "source": "",
+          "coverage": ""
+        },
+        "66": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "67": {
+          "source": "   * 获取默认的配置信息",
+          "coverage": ""
+        },
+        "68": {
+          "source": "   * @return {Object} 默认的属性",
+          "coverage": ""
+        },
+        "69": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "70": {
+          "source": "  getDefaultCfg : function(){",
+          "coverage": ""
+        },
+        "71": {
+          "source": "    return {};",
+          "coverage": 2
+        },
+        "72": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "73": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "74": {
+          "source": "   * 设置属性信息",
+          "coverage": ""
+        },
+        "75": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "76": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "77": {
+          "source": "  set : function(name,value){",
+          "coverage": ""
+        },
+        "78": {
+          "source": "    var m = '_onRender' + Util.ucfirst(name);",
+          "coverage": 15
+        },
+        "79": {
+          "source": "    if(this[m]){",
+          "coverage": 15
+        },
+        "80": {
+          "source": "      this[m](value,this._attrs[name]);",
+          "coverage": 1
+        },
+        "81": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "82": {
+          "source": "    this._attrs[name] = value;",
+          "coverage": 15
+        },
+        "83": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "84": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "85": {
+          "source": "   * 获取属性信息",
+          "coverage": ""
+        },
+        "86": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "87": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "88": {
+          "source": "  get : function(name){",
+          "coverage": ""
+        },
+        "89": {
+          "source": "    return this._attrs[name];",
+          "coverage": 59
+        },
+        "90": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "91": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "92": {
+          "source": "   * 获取初始配置的信息",
+          "coverage": ""
+        },
+        "93": {
+          "source": "   * @param  {String} name 配置项名称",
+          "coverage": ""
+        },
+        "94": {
+          "source": "   * @return {*}  初始值",
+          "coverage": ""
+        },
+        "95": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "96": {
+          "source": "  getCfgAttr : function(name){",
+          "coverage": ""
+        },
+        "97": {
+          "source": "      return this.cfg[name];",
+          "coverage": 0
+        },
+        "98": {
+          "source": "",
+          "coverage": ""
+        },
+        "99": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "100": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "101": {
+          "source": "   * 显示",
+          "coverage": ""
+        },
+        "102": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "103": {
+          "source": "  show : function(){",
+          "coverage": ""
+        },
+        "104": {
+          "source": "    this.set('visible',true);",
+          "coverage": 0
+        },
+        "105": {
+          "source": "    if(!this.get('visible')){",
+          "coverage": 0
+        },
+        "106": {
+          "source": "      this.fire('show');",
+          "coverage": 0
+        },
+        "107": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "108": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "109": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "110": {
+          "source": "   * 隐藏",
+          "coverage": ""
+        },
+        "111": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "112": {
+          "source": "  hide : function(){",
+          "coverage": ""
+        },
+        "113": {
+          "source": "    this.set('visible',false);",
+          "coverage": 0
+        },
+        "114": {
+          "source": "    if(this.get('visible')){",
+          "coverage": 0
+        },
+        "115": {
+          "source": "      this.fire('hide');",
+          "coverage": 0
+        },
+        "116": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "117": {
+          "source": "  },  ",
+          "coverage": ""
+        },
+        "118": {
+          "source": "  ",
+          "coverage": ""
+        },
+        "119": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "120": {
+          "source": "   * 附加事件",
+          "coverage": ""
+        },
+        "121": {
+          "source": "   * @param  {String}   eventType 事件类型",
+          "coverage": ""
+        },
+        "122": {
+          "source": "   * @param  {Function} fn  事件处理函数",
+          "coverage": ""
+        },
+        "123": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "124": {
+          "source": "  on : function(eventType,fn){",
+          "coverage": ""
+        },
+        "125": {
+          "source": "    var _self = this,",
+          "coverage": 2
+        },
+        "126": {
+          "source": "      node = _self.get('node'),",
+          "coverage": ""
+        },
+        "127": {
+          "source": "      events = this.events,",
+          "coverage": ""
+        },
+        "128": {
+          "source": "      callbacks = events[eventType];",
+          "coverage": ""
+        },
+        "129": {
+          "source": "",
+          "coverage": ""
+        },
+        "130": {
+          "source": "    Util.addEvent(node,eventType,fn);",
+          "coverage": 2
+        },
+        "131": {
+          "source": "    if(!callbacks){",
+          "coverage": 2
+        },
+        "132": {
+          "source": "      callbacks = events[eventType] = [];",
+          "coverage": 2
+        },
+        "133": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "134": {
+          "source": "    callbacks.push(fn);",
+          "coverage": 2
+        },
+        "135": {
+          "source": "    return this;",
+          "coverage": 2
+        },
+        "136": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "137": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "138": {
+          "source": "   * 移除事件",
+          "coverage": ""
+        },
+        "139": {
+          "source": "   * @param  {String}   eventType 事件类型",
+          "coverage": ""
+        },
+        "140": {
+          "source": "   * @param  {Function} fn  事件处理函数",
+          "coverage": ""
+        },
+        "141": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "142": {
+          "source": "  off : function(eventType,fn){",
+          "coverage": ""
+        },
+        "143": {
+          "source": "    var _self = this,",
+          "coverage": 2
+        },
+        "144": {
+          "source": "      node = _self.get('node'),",
+          "coverage": ""
+        },
+        "145": {
+          "source": "      events = this.events,",
+          "coverage": ""
+        },
+        "146": {
+          "source": "      callbacks = events[eventType];",
+          "coverage": ""
+        },
+        "147": {
+          "source": "    if(!eventType){",
+          "coverage": 2
+        },
+        "148": {
+          "source": "      Util.each(events,function(callbacks,type){",
+          "coverage": 0
+        },
+        "149": {
+          "source": "          Util.each(callbacks,function(m){",
+          "coverage": 0
+        },
+        "150": {
+          "source": "            Util.removeEvent(node,type,m);",
+          "coverage": 0
+        },
+        "151": {
+          "source": "          });",
+          "coverage": ""
+        },
+        "152": {
+          "source": "      });",
+          "coverage": ""
+        },
+        "153": {
+          "source": "      this.events = {};",
+          "coverage": 0
+        },
+        "154": {
+          "source": "      return this;",
+          "coverage": 0
+        },
+        "155": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "156": {
+          "source": "    Util.removeEvent(node,eventType,fn);",
+          "coverage": 2
+        },
+        "157": {
+          "source": "    ",
+          "coverage": ""
+        },
+        "158": {
+          "source": "    if(callbacks){",
+          "coverage": 2
+        },
+        "159": {
+          "source": "      Util.remove(callbacks,fn);",
+          "coverage": 2
+        },
+        "160": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "161": {
+          "source": "    return this;",
+          "coverage": 2
+        },
+        "162": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "163": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "164": {
+          "source": "   * 触发事件",
+          "coverage": ""
+        },
+        "165": {
+          "source": "   * @param  {String} eventType 事件类型",
+          "coverage": ""
+        },
+        "166": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "167": {
+          "source": "  fire : function(eventType,eventObj){",
+          "coverage": ""
+        },
+        "168": {
+          "source": "    var _self = this,",
+          "coverage": 2
+        },
+        "169": {
+          "source": "      events = _self.events,",
+          "coverage": ""
+        },
+        "170": {
+          "source": "      callbacks = events[eventType];",
+          "coverage": ""
+        },
+        "171": {
+          "source": "    if(callbacks){",
+          "coverage": 2
+        },
+        "172": {
+          "source": "      Util.each(callbacks,function(m){",
+          "coverage": 2
+        },
+        "173": {
+          "source": "        m(eventObj);",
+          "coverage": 1
+        },
+        "174": {
+          "source": "      });",
+          "coverage": ""
+        },
+        "175": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "176": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "177": {
+          "source": "  ",
+          "coverage": ""
+        },
+        "178": {
+          "source": "  //渲染应用的 class",
+          "coverage": ""
+        },
+        "179": {
+          "source": "  _onRenderElCls : function(cls,pre){",
+          "coverage": ""
+        },
+        "180": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "181": {
+          "source": "      node = _self.get('node'),",
+          "coverage": ""
+        },
+        "182": {
+          "source": "      oldCls = node.getAttribute('class'),",
+          "coverage": ""
+        },
+        "183": {
+          "source": "      arr = oldCls ? oldCls.split(' ') : [];",
+          "coverage": ""
+        },
+        "184": {
+          "source": "",
+          "coverage": ""
+        },
+        "185": {
+          "source": "    if(pre){",
+          "coverage": 0
+        },
+        "186": {
+          "source": "      Util.remove(arr,pre);",
+          "coverage": 0
+        },
+        "187": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "188": {
+          "source": "    if(cls){",
+          "coverage": 0
+        },
+        "189": {
+          "source": "      arr.push(cls);              ",
+          "coverage": 0
+        },
+        "190": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "191": {
+          "source": "    node.setAttribute('class',arr.join(' ')); ",
+          "coverage": 0
+        },
+        "192": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "193": {
+          "source": "  //设置zIndex",
+          "coverage": ""
+        },
+        "194": {
+          "source": "  _onRenderZIndex : function(zIndex){",
+          "coverage": ""
+        },
+        "195": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "196": {
+          "source": "      node = _self.get('node');",
+          "coverage": ""
+        },
+        "197": {
+          "source": "    if(zIndex != null){",
+          "coverage": 0
+        },
+        "198": {
+          "source": "        node.setAttribute('zIndex',zIndex);",
+          "coverage": 0
+        },
+        "199": {
+          "source": "        if(Util.vml){",
+          "coverage": 0
+        },
+        "200": {
+          "source": "            node.style.zIndex = zIndex;",
+          "coverage": 0
+        },
+        "201": {
+          "source": "        }",
+          "coverage": ""
+        },
+        "202": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "203": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "204": {
+          "source": "  //设置显示隐藏",
+          "coverage": ""
+        },
+        "205": {
+          "source": "  _onRenderVisible : function(visible){",
+          "coverage": ""
+        },
+        "206": {
+          "source": "    var _self = this,",
+          "coverage": 2
+        },
+        "207": {
+          "source": "      node = _self.get('node');",
+          "coverage": ""
+        },
+        "208": {
+          "source": "    if(visible){",
+          "coverage": 2
+        },
+        "209": {
+          "source": "      node.style.display = '';",
+          "coverage": 2
+        },
+        "210": {
+          "source": "    }else{",
+          "coverage": ""
+        },
+        "211": {
+          "source": "      node.style.display = 'none';",
+          "coverage": 0
+        },
+        "212": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "213": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "214": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "215": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "216": {
+          "source": "   * 渲染控件",
+          "coverage": ""
+        },
+        "217": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "218": {
+          "source": "  beforeRenderUI : function(){",
+          "coverage": ""
+        },
+        "219": {
+          "source": "",
+          "coverage": ""
+        },
+        "220": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "221": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "222": {
+          "source": "   * 渲染控件/图形",
+          "coverage": ""
+        },
+        "223": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "224": {
+          "source": "  render : function(){",
+          "coverage": ""
+        },
+        "225": {
+          "source": "    var _self = this,",
+          "coverage": 2
+        },
+        "226": {
+          "source": "      //cls = _self.get('elCls'),",
+          "coverage": ""
+        },
+        "227": {
+          "source": "      zIndex = _self.get('zIndex'),",
+          "coverage": ""
+        },
+        "228": {
+          "source": "      attrs = _self._attrs,",
+          "coverage": ""
+        },
+        "229": {
+          "source": "      node;",
+          "coverage": ""
+        },
+        "230": {
+          "source": "",
+          "coverage": ""
+        },
+        "231": {
+          "source": "    if(!_self.get('rendered')){",
+          "coverage": 2
+        },
+        "232": {
+          "source": "      ",
+          "coverage": ""
+        },
+        "233": {
+          "source": "      _self.createDom();",
+          "coverage": 2
+        },
+        "234": {
+          "source": "      _self.beforeRenderUI();",
+          "coverage": 2
+        },
+        "235": {
+          "source": "      _self.renderUI();",
+          "coverage": 2
+        },
+        "236": {
+          "source": "      _self.set('rendered',true);",
+          "coverage": 2
+        },
+        "237": {
+          "source": "      node = _self.get('node');",
+          "coverage": 2
+        },
+        "238": {
+          "source": "      if(this.get('visible') == false){",
+          "coverage": 2
+        },
+        "239": {
+          "source": "          this.hide();",
+          "coverage": 0
+        },
+        "240": {
+          "source": "      }",
+          "coverage": ""
+        },
+        "241": {
+          "source": "",
+          "coverage": ""
+        },
+        "242": {
+          "source": "      Util.each(attrs,function(v,k){",
+          "coverage": 2
+        },
+        "243": {
+          "source": "        var m = _self['_onRender' + Util.ucfirst(k)];",
+          "coverage": 21
+        },
+        "244": {
+          "source": "        if(m){",
+          "coverage": 21
+        },
+        "245": {
+          "source": "          m.call(_self,v);",
+          "coverage": 3
+        },
+        "246": {
+          "source": "        }",
+          "coverage": ""
+        },
+        "247": {
+          "source": "      });",
+          "coverage": ""
+        },
+        "248": {
+          "source": "     ",
+          "coverage": ""
+        },
+        "249": {
+          "source": "      _self.bindUI();",
+          "coverage": 2
+        },
+        "250": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "251": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "252": {
+          "source": "",
+          "coverage": ""
+        },
+        "253": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "254": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "255": {
+          "source": "   * 创建dom",
+          "coverage": ""
+        },
+        "256": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "257": {
+          "source": "  createDom : function(){",
+          "coverage": ""
+        },
+        "258": {
+          "source": "",
+          "coverage": ""
+        },
+        "259": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "260": {
+          "source": "",
+          "coverage": ""
+        },
+        "261": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "262": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "263": {
+          "source": "   * 渲染控件",
+          "coverage": ""
+        },
+        "264": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "265": {
+          "source": "  renderUI : function(){",
+          "coverage": ""
+        },
+        "266": {
+          "source": "",
+          "coverage": ""
+        },
+        "267": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "268": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "269": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "270": {
+          "source": "   * 绑定事件",
+          "coverage": ""
+        },
+        "271": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "272": {
+          "source": "  bindUI : function(){",
+          "coverage": ""
+        },
+        "273": {
+          "source": "",
+          "coverage": ""
+        },
+        "274": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "275": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "276": {
+          "source": "   * 移除，从父元素中移除",
+          "coverage": ""
+        },
+        "277": {
+          "source": "   * @param  {Boolean} [destroy=true] ",
+          "coverage": ""
+        },
+        "278": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "279": {
+          "source": "  remove : function(destroy){",
+          "coverage": ""
+        },
+        "280": {
+          "source": "    if(destroy == undefined){",
+          "coverage": 0
+        },
+        "281": {
+          "source": "      destroy = true;",
+          "coverage": 0
+        },
+        "282": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "283": {
+          "source": "    var _self = this;",
+          "coverage": 0
+        },
+        "284": {
+          "source": "    if(_self.get('parent')){",
+          "coverage": 0
+        },
+        "285": {
+          "source": "      _self.get('parent').removeChild(_self,destroy);",
+          "coverage": 0
+        },
+        "286": {
+          "source": "          _self.set('parent',null);",
+          "coverage": 0
+        },
+        "287": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "288": {
+          "source": "    if(destroy){",
+          "coverage": 0
+        },
+        "289": {
+          "source": "      _self.destroy();",
+          "coverage": 0
+        },
+        "290": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "291": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "292": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "293": {
+          "source": "   * 析构函数",
+          "coverage": ""
+        },
+        "294": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "295": {
+          "source": "  destroy : function(){",
+          "coverage": ""
+        },
+        "296": {
+          "source": "    var _self = this,",
+          "coverage": 1
+        },
+        "297": {
+          "source": "      destroyed = _self.destroyed,",
+          "coverage": ""
+        },
+        "298": {
+          "source": "      node = _self.get('node');",
+          "coverage": ""
+        },
+        "299": {
+          "source": "",
+          "coverage": ""
+        },
+        "300": {
+          "source": "    if(destroyed){",
+          "coverage": 1
+        },
+        "301": {
+          "source": "        return;",
+          "coverage": 0
+        },
+        "302": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "303": {
+          "source": "    node.parentNode && node.parentNode.removeChild(node);",
+          "coverage": 1
+        },
+        "304": {
+          "source": "    _self._attrs = {};",
+          "coverage": 1
+        },
+        "305": {
+          "source": "    _self.events = {};",
+          "coverage": 1
+        },
+        "306": {
+          "source": "    _self.destroyed = true;",
+          "coverage": 1
+        },
+        "307": {
+          "source": "  }",
+          "coverage": ""
+        },
+        "308": {
+          "source": "",
+          "coverage": ""
+        },
+        "309": {
+          "source": "});",
+          "coverage": ""
+        },
+        "310": {
+          "source": "  ",
+          "coverage": ""
+        },
+        "311": {
+          "source": "module.exports = Base;",
+          "coverage": 1
+        },
+        "312": {
+          "source": "",
+          "coverage": ""
+        }
+      }
+    },
+    {
+      "filename": "/Users/dxq613/Desktop/work/web/graphic/svg/src/canvas.js",
+      "coverage": 90.69767441860465,
+      "hits": 39,
+      "misses": 4,
+      "sloc": 43,
+      "source": {
+        "1": {
+          "source": "",
+          "coverage": ""
+        },
+        "2": {
+          "source": "var ",
+          "coverage": 1
+        },
+        "3": {
+          "source": "  Util = require('./util'),",
+          "coverage": ""
+        },
+        "4": {
+          "source": "  Group = require('./group'),",
+          "coverage": ""
+        },
+        "5": {
+          "source": "  Container = require('./container');",
+          "coverage": ""
+        },
+        "6": {
+          "source": "",
+          "coverage": ""
+        },
+        "7": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "8": {
+          "source": " * @class Chart.Canvas",
+          "coverage": ""
+        },
+        "9": {
+          "source": " * 图形的画板，支持SVG和VML",
+          "coverage": ""
+        },
+        "10": {
+          "source": " * @extends Chart.Canvas.Container",
+          "coverage": ""
+        },
+        "11": {
+          "source": " */",
+          "coverage": ""
+        },
+        "12": {
+          "source": "var Canvas = function(cfg){",
+          "coverage": 1
+        },
+        "13": {
+          "source": "  Canvas.superclass.constructor.call(this,cfg);",
+          "coverage": 2
+        },
+        "14": {
+          "source": "};",
+          "coverage": ""
+        },
+        "15": {
+          "source": "",
+          "coverage": ""
+        },
+        "16": {
+          "source": "Canvas.ATTRS = {",
+          "coverage": 1
+        },
+        "17": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "18": {
+          "source": "   * 宽度",
+          "coverage": ""
+        },
+        "19": {
+          "source": "   * @cfg {Number} width",
+          "coverage": ""
+        },
+        "20": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "21": {
+          "source": "  width : {},",
+          "coverage": ""
+        },
+        "22": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "23": {
+          "source": "   * 高度",
+          "coverage": ""
+        },
+        "24": {
+          "source": "   * @cfg {Number} height",
+          "coverage": ""
+        },
+        "25": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "26": {
+          "source": "  height : {},",
+          "coverage": ""
+        },
+        "27": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "28": {
+          "source": "   * 渲染到的节点",
+          "coverage": ""
+        },
+        "29": {
+          "source": "   * @cfg {String} id",
+          "coverage": ""
+        },
+        "30": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "31": {
+          "source": "  id : {} ,",
+          "coverage": ""
+        },
+        "32": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "33": {
+          "source": "   * @private",
+          "coverage": ""
+        },
+        "34": {
+          "source": "   * @type {Object}",
+          "coverage": ""
+        },
+        "35": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "36": {
+          "source": "  viewbox : {",
+          "coverage": ""
+        },
+        "37": {
+          "source": "",
+          "coverage": ""
+        },
+        "38": {
+          "source": "  }",
+          "coverage": ""
+        },
+        "39": {
+          "source": "};",
+          "coverage": ""
+        },
+        "40": {
+          "source": "",
+          "coverage": ""
+        },
+        "41": {
+          "source": "Util.extend(Canvas,Container);",
+          "coverage": 1
+        },
+        "42": {
+          "source": "",
+          "coverage": ""
+        },
+        "43": {
+          "source": "Util.augment(Canvas,{",
+          "coverage": 1
+        },
+        "44": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "45": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "46": {
+          "source": "   * @ignore",
+          "coverage": ""
+        },
+        "47": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "48": {
+          "source": "  getGroupClass : function(){",
+          "coverage": ""
+        },
+        "49": {
+          "source": "    return Group;",
+          "coverage": 0
+        },
+        "50": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "51": {
+          "source": "  renderUI : function(){",
+          "coverage": ""
+        },
+        "52": {
+          "source": "    var _self = this,",
+          "coverage": 2
+        },
+        "53": {
+          "source": "      id = _self.get('id'),",
+          "coverage": ""
+        },
+        "54": {
+          "source": "      width = _self.get('width'),",
+          "coverage": ""
+        },
+        "55": {
+          "source": "      height = _self.get('height'),",
+          "coverage": ""
+        },
+        "56": {
+          "source": "      node,",
+          "coverage": ""
+        },
+        "57": {
+          "source": "      container = Util.find(id);",
+          "coverage": ""
+        },
+        "58": {
+          "source": "",
+          "coverage": ""
+        },
+        "59": {
+          "source": "    if(!container){",
+          "coverage": 2
+        },
+        "60": {
+          "source": "      throw 'no id for canvas!';",
+          "coverage": 0
+        },
+        "61": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "62": {
+          "source": "",
+          "coverage": ""
+        },
+        "63": {
+          "source": "    node = Util.svg({width: width,height : height});",
+          "coverage": 2
+        },
+        "64": {
+          "source": "    container.appendChild(node);",
+          "coverage": 2
+        },
+        "65": {
+          "source": "    _self.set('canvas',_self);",
+          "coverage": 2
+        },
+        "66": {
+          "source": "    _self.set('node',node);",
+          "coverage": 2
+        },
+        "67": {
+          "source": "    _self.set('container',container);",
+          "coverage": 2
+        },
+        "68": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "69": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "70": {
+          "source": "   * 设置宽高",
+          "coverage": ""
+        },
+        "71": {
+          "source": "   * @param {Number} width 宽",
+          "coverage": ""
+        },
+        "72": {
+          "source": "   * @param {Number} height 高",
+          "coverage": ""
+        },
+        "73": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "74": {
+          "source": "  setSize : function(width,height){",
+          "coverage": ""
+        },
+        "75": {
+          "source": "    var _self = this,",
+          "coverage": 2
+        },
+        "76": {
+          "source": "      node = _self.get('node');",
+          "coverage": ""
+        },
+        "77": {
+          "source": "    this.set('width',width);",
+          "coverage": 2
+        },
+        "78": {
+          "source": "    this.set('height',height);",
+          "coverage": 2
+        },
+        "79": {
+          "source": "    Util.attr(node,{",
+          "coverage": 2
+        },
+        "80": {
+          "source": "      width : width,",
+          "coverage": ""
+        },
+        "81": {
+          "source": "      height : height",
+          "coverage": ""
+        },
+        "82": {
+          "source": "    });",
+          "coverage": ""
+        },
+        "83": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "84": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "85": {
+          "source": "   * 设置viewbox,用于放大，缩小视图",
+          "coverage": ""
+        },
+        "86": {
+          "source": "   * @param {Number} x x轴起点",
+          "coverage": ""
+        },
+        "87": {
+          "source": "   * @param {Number} y y轴起点",
+          "coverage": ""
+        },
+        "88": {
+          "source": "   * @param {Number} width 宽",
+          "coverage": ""
+        },
+        "89": {
+          "source": "   * @param {Number} height 高",
+          "coverage": ""
+        },
+        "90": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "91": {
+          "source": "  setViewBox : function(x, y, w, h){",
+          "coverage": ""
+        },
+        "92": {
+          "source": "    this.set('viewbox',{",
+          "coverage": 1
+        },
+        "93": {
+          "source": "      x : x,",
+          "coverage": ""
+        },
+        "94": {
+          "source": "      y : y,",
+          "coverage": ""
+        },
+        "95": {
+          "source": "      width : w,",
+          "coverage": ""
+        },
+        "96": {
+          "source": "      height : h",
+          "coverage": ""
+        },
+        "97": {
+          "source": "    });",
+          "coverage": ""
+        },
+        "98": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "99": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "100": {
+          "source": "   * 获取画布的内部宽度，不是DOM的宽度，而是viewbox的宽度",
+          "coverage": ""
+        },
+        "101": {
+          "source": "   * @return {Number} 宽度",
+          "coverage": ""
+        },
+        "102": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "103": {
+          "source": "  getViewWidth : function(){",
+          "coverage": ""
+        },
+        "104": {
+          "source": "    var _self = this,",
+          "coverage": 2
+        },
+        "105": {
+          "source": "      viewbox = _self.get('viewbox');",
+          "coverage": ""
+        },
+        "106": {
+          "source": "",
+          "coverage": ""
+        },
+        "107": {
+          "source": "    return viewbox ? viewbox.width : _self.get('width');",
+          "coverage": 2
+        },
+        "108": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "109": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "110": {
+          "source": "   * 获取画布的内部高度，不是DOM的宽度，而是viewbox的高度",
+          "coverage": ""
+        },
+        "111": {
+          "source": "   * @return {Number} 高度",
+          "coverage": ""
+        },
+        "112": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "113": {
+          "source": "  getViewHeight : function(){",
+          "coverage": ""
+        },
+        "114": {
+          "source": "     var _self = this,",
+          "coverage": 2
+        },
+        "115": {
+          "source": "      viewbox = _self.get('viewbox');",
+          "coverage": ""
+        },
+        "116": {
+          "source": "",
+          "coverage": ""
+        },
+        "117": {
+          "source": "    return viewbox ? viewbox.height : _self.get('height');",
+          "coverage": 2
+        },
+        "118": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "119": {
+          "source": "  _onRenderViewbox : function(viewbox){",
+          "coverage": ""
+        },
+        "120": {
+          "source": "    var _self = this,",
+          "coverage": 2
+        },
+        "121": {
+          "source": "      node = _self.get('node'),",
+          "coverage": ""
+        },
+        "122": {
+          "source": "      str = Util.substitute('{x} {y} {width} {height}',viewbox);",
+          "coverage": ""
+        },
+        "123": {
+          "source": "    Util.attr(node,'viewbox',str);",
+          "coverage": 2
+        },
+        "124": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "125": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "126": {
+          "source": "   * 将页面上的坐标转换成画布上的坐标",
+          "coverage": ""
+        },
+        "127": {
+          "source": "   * @param  {Number} clientX 窗口的x坐标",
+          "coverage": ""
+        },
+        "128": {
+          "source": "   * @param  {Number} clientY 窗口上的y坐标",
+          "coverage": ""
+        },
+        "129": {
+          "source": "   * @return {Object} 坐标对象包含x,y",
+          "coverage": ""
+        },
+        "130": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "131": {
+          "source": "  getPoint : function(clientX,clientY){",
+          "coverage": ""
+        },
+        "132": {
+          "source": "    var _self = this,",
+          "coverage": 3
+        },
+        "133": {
+          "source": "      node = _self.get('node'),",
+          "coverage": ""
+        },
+        "134": {
+          "source": "      viewbox = _self.get('viewbox'),",
+          "coverage": ""
+        },
+        "135": {
+          "source": "      offset = node.getBoundingClientRect(),",
+          "coverage": ""
+        },
+        "136": {
+          "source": "      point = {};",
+          "coverage": ""
+        },
+        "137": {
+          "source": "",
+          "coverage": ""
+        },
+        "138": {
+          "source": "    if(!viewbox){ //如果不存在viewbox",
+          "coverage": 3
+        },
+        "139": {
+          "source": "      point.x = clientX - offset.left;",
+          "coverage": 1
+        },
+        "140": {
+          "source": "      point.y = clientY - offset.top;",
+          "coverage": 1
+        },
+        "141": {
+          "source": "    }else{",
+          "coverage": ""
+        },
+        "142": {
+          "source": "      var xfactor = viewbox.width / _self.get('width'), //计算 宽度比例",
+          "coverage": 2
+        },
+        "143": {
+          "source": "        yfactor = viewbox.height / _self.get('height'); //高度比例",
+          "coverage": ""
+        },
+        "144": {
+          "source": "      point.x = (clientX - offset.left)  * xfactor + viewbox.x;",
+          "coverage": 2
+        },
+        "145": {
+          "source": "      point.y = (clientY - offset.top) * yfactor + viewbox.y;",
+          "coverage": 2
+        },
+        "146": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "147": {
+          "source": "",
+          "coverage": ""
+        },
+        "148": {
+          "source": "    return point;",
+          "coverage": 3
+        },
+        "149": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "150": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "151": {
+          "source": "   * 将相对地址转换成为画布上的坐标",
+          "coverage": ""
+        },
+        "152": {
+          "source": "   * @param  {Number} dx 相对于起始点的x偏移",
+          "coverage": ""
+        },
+        "153": {
+          "source": "   * @param  {Number} dy 相对于起始点的y偏移",
+          "coverage": ""
+        },
+        "154": {
+          "source": "   * @return {Object} 坐标对象",
+          "coverage": ""
+        },
+        "155": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "156": {
+          "source": "  getRelativePoint : function(dx,dy){",
+          "coverage": ""
+        },
+        "157": {
+          "source": "    var _self = this,",
+          "coverage": 1
+        },
+        "158": {
+          "source": "      viewbox = _self.get('viewbox'),",
+          "coverage": ""
+        },
+        "159": {
+          "source": "      point = {};",
+          "coverage": ""
+        },
+        "160": {
+          "source": "    if(!viewbox){",
+          "coverage": 1
+        },
+        "161": {
+          "source": "      point.x = dx;",
+          "coverage": 0
+        },
+        "162": {
+          "source": "      point.y = dy;",
+          "coverage": 0
+        },
+        "163": {
+          "source": "    }else{",
+          "coverage": ""
+        },
+        "164": {
+          "source": "      var xfactor = viewbox.width / _self.get('width'), //计算 宽度比例",
+          "coverage": 1
+        },
+        "165": {
+          "source": "        yfactor = viewbox.height / _self.get('height'); //高度比例",
+          "coverage": ""
+        },
+        "166": {
+          "source": "      point.x = dx * xfactor + viewbox.x;",
+          "coverage": 1
+        },
+        "167": {
+          "source": "      point.y = dy * xfactor + viewbox.y;",
+          "coverage": 1
+        },
+        "168": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "169": {
+          "source": "",
+          "coverage": ""
+        },
+        "170": {
+          "source": "    return point;",
+          "coverage": 1
+        },
+        "171": {
+          "source": "  }",
+          "coverage": ""
+        },
+        "172": {
+          "source": "",
+          "coverage": ""
+        },
+        "173": {
+          "source": "});",
+          "coverage": ""
+        },
+        "174": {
+          "source": "",
+          "coverage": ""
+        },
+        "175": {
+          "source": "",
+          "coverage": ""
+        },
+        "176": {
+          "source": "module.exports = Canvas;",
+          "coverage": 1
+        },
+        "177": {
+          "source": "",
+          "coverage": ""
+        }
+      }
+    },
+    {
+      "filename": "/Users/dxq613/Desktop/work/web/graphic/svg/src/container.js",
+      "coverage": 18.75,
+      "hits": 15,
+      "misses": 65,
+      "sloc": 80,
+      "source": {
+        "1": {
+          "source": "var ",
+          "coverage": 1
+        },
+        "2": {
+          "source": "  Shape = require('./shape'),",
+          "coverage": ""
+        },
+        "3": {
+          "source": "  Base = require('./base'),",
+          "coverage": ""
+        },
+        "4": {
+          "source": "  Util = require('./util');",
+          "coverage": ""
+        },
+        "5": {
+          "source": "",
+          "coverage": ""
+        },
+        "6": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "7": {
+          "source": " * @class Chart.Canvas.Container",
+          "coverage": ""
+        },
+        "8": {
+          "source": " * 图形容器",
+          "coverage": ""
+        },
+        "9": {
+          "source": " * @extends Chart.Canvas.Base",
+          "coverage": ""
+        },
+        "10": {
+          "source": " * @abstract",
+          "coverage": ""
+        },
+        "11": {
+          "source": " */",
+          "coverage": ""
+        },
+        "12": {
+          "source": "var Container = function(cfg){",
+          "coverage": 1
+        },
+        "13": {
+          "source": "",
+          "coverage": ""
+        },
+        "14": {
+          "source": "  Container.superclass.constructor.call(this,cfg);",
+          "coverage": 2
+        },
+        "15": {
+          "source": "};",
+          "coverage": ""
+        },
+        "16": {
+          "source": "",
+          "coverage": ""
+        },
+        "17": {
+          "source": "Util.extend(Container,Base);",
+          "coverage": 1
+        },
+        "18": {
+          "source": "",
+          "coverage": ""
+        },
+        "19": {
+          "source": "Container.ATTRS = {",
+          "coverage": 1
+        },
+        "20": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "21": {
+          "source": "   * 子节点",
+          "coverage": ""
+        },
+        "22": {
+          "source": "   * @type {Array}",
+          "coverage": ""
+        },
+        "23": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "24": {
+          "source": "  children : []",
+          "coverage": ""
+        },
+        "25": {
+          "source": "}",
+          "coverage": ""
+        },
+        "26": {
+          "source": "",
+          "coverage": ""
+        },
+        "27": {
+          "source": "Util.augment(Container,{",
+          "coverage": 1
+        },
+        "28": {
+          "source": "",
+          "coverage": ""
+        },
+        "29": {
+          "source": "  isContainer : true,",
+          "coverage": ""
+        },
+        "30": {
+          "source": "  beforeRenderUI : function(){",
+          "coverage": ""
+        },
+        "31": {
+          "source": "    this.set('children',[]);",
+          "coverage": 2
+        },
+        "32": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "33": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "34": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "35": {
+          "source": "   * @ignore",
+          "coverage": ""
+        },
+        "36": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "37": {
+          "source": "  getGroupClass : function(){",
+          "coverage": ""
+        },
+        "38": {
+          "source": "",
+          "coverage": ""
+        },
+        "39": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "40": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "41": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "42": {
+          "source": "   * @ignore",
+          "coverage": ""
+        },
+        "43": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "44": {
+          "source": "  getShapeClass : function(type){",
+          "coverage": ""
+        },
+        "45": {
+          "source": "    var cName = Util.ucfirst(type);",
+          "coverage": 0
+        },
+        "46": {
+          "source": "    if(Shape[cName]){",
+          "coverage": 0
+        },
+        "47": {
+          "source": "      return Shape[cName];",
+          "coverage": 0
+        },
+        "48": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "49": {
+          "source": "    return Shape;",
+          "coverage": 0
+        },
+        "50": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "51": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "52": {
+          "source": "   * 添加图形",
+          "coverage": ""
+        },
+        "53": {
+          "source": "   * @param {String | Object} type 类型或者配置项",
+          "coverage": ""
+        },
+        "54": {
+          "source": "   * @param {String} attrs 属性",
+          "coverage": ""
+        },
+        "55": {
+          "source": "   * @return {Chart.Canvas.Shape} 图形",
+          "coverage": ""
+        },
+        "56": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "57": {
+          "source": "  addShape : function(type,attrs){",
+          "coverage": ""
+        },
+        "58": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "59": {
+          "source": "      C,",
+          "coverage": ""
+        },
+        "60": {
+          "source": "      cfg,",
+          "coverage": ""
+        },
+        "61": {
+          "source": "      shape;",
+          "coverage": ""
+        },
+        "62": {
+          "source": "    if(Util.isObject(type)){",
+          "coverage": 0
+        },
+        "63": {
+          "source": "      cfg = type;",
+          "coverage": 0
+        },
+        "64": {
+          "source": "      type = cfg.type;",
+          "coverage": 0
+        },
+        "65": {
+          "source": "    }else{",
+          "coverage": ""
+        },
+        "66": {
+          "source": "      cfg = {",
+          "coverage": 0
+        },
+        "67": {
+          "source": "        type : type,",
+          "coverage": ""
+        },
+        "68": {
+          "source": "        attrs : attrs,",
+          "coverage": ""
+        },
+        "69": {
+          "source": "        canvas : _self.get('canvas')",
+          "coverage": ""
+        },
+        "70": {
+          "source": "      };",
+          "coverage": ""
+        },
+        "71": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "72": {
+          "source": "    cfg.parent = _self;",
+          "coverage": 0
+        },
+        "73": {
+          "source": "    C = _self.getShapeClass(type);",
+          "coverage": 0
+        },
+        "74": {
+          "source": "    shape = new C(cfg);",
+          "coverage": 0
+        },
+        "75": {
+          "source": "    shape.set('canvas',_self.get('canvas'));",
+          "coverage": 0
+        },
+        "76": {
+          "source": "    _self.addChild(shape);",
+          "coverage": 0
+        },
+        "77": {
+          "source": "    return shape;",
+          "coverage": 0
+        },
+        "78": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "79": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "80": {
+          "source": "   * 添加分组",
+          "coverage": ""
+        },
+        "81": {
+          "source": "   * @param {Function} C 构造函数,可以为空，默认为Chart.Canvas.Group",
+          "coverage": ""
+        },
+        "82": {
+          "source": "   * @return {Chart.Canvas.Group} 分组",
+          "coverage": ""
+        },
+        "83": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "84": {
+          "source": "  addGroup : function(C,cfg){",
+          "coverage": ""
+        },
+        "85": {
+          "source": "    if(Util.isObject(C)){",
+          "coverage": 0
+        },
+        "86": {
+          "source": "      cfg = C;",
+          "coverage": 0
+        },
+        "87": {
+          "source": "      C = null;",
+          "coverage": 0
+        },
+        "88": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "89": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "90": {
+          "source": "      cfg = Util.mix({",
+          "coverage": ""
+        },
+        "91": {
+          "source": "        parent : _self,",
+          "coverage": ""
+        },
+        "92": {
+          "source": "        canvas : _self.get('canvas')",
+          "coverage": ""
+        },
+        "93": {
+          "source": "      },cfg),",
+          "coverage": ""
+        },
+        "94": {
+          "source": "      group;",
+          "coverage": ""
+        },
+        "95": {
+          "source": "",
+          "coverage": ""
+        },
+        "96": {
+          "source": "    C = C || _self.getGroupClass();",
+          "coverage": 0
+        },
+        "97": {
+          "source": "    group = new C(cfg);",
+          "coverage": 0
+        },
+        "98": {
+          "source": "    _self.addChild(group);",
+          "coverage": 0
+        },
+        "99": {
+          "source": "    return group;",
+          "coverage": 0
+        },
+        "100": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "101": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "102": {
+          "source": "   * 移除子图形",
+          "coverage": ""
+        },
+        "103": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "104": {
+          "source": "   * @param  {*} item 子图形或者分组",
+          "coverage": ""
+        },
+        "105": {
+          "source": "   * @param  {Boolean} [destroy=true] 是否同时从控件移除",
+          "coverage": ""
+        },
+        "106": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "107": {
+          "source": "  removeChild : function(item,destroy){",
+          "coverage": ""
+        },
+        "108": {
+          "source": "    if(destroy == undefined){",
+          "coverage": 0
+        },
+        "109": {
+          "source": "      destroy = true;",
+          "coverage": 0
+        },
+        "110": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "111": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "112": {
+          "source": "      node = _self.get('node'),",
+          "coverage": ""
+        },
+        "113": {
+          "source": "      children = _self.get('children');",
+          "coverage": ""
+        },
+        "114": {
+          "source": "    Util.remove(children,item);",
+          "coverage": 0
+        },
+        "115": {
+          "source": "    ",
+          "coverage": ""
+        },
+        "116": {
+          "source": "    node.removeChild(item.get('node'));",
+          "coverage": 0
+        },
+        "117": {
+          "source": "    if(destroy){",
+          "coverage": 0
+        },
+        "118": {
+          "source": "      item.destroy();",
+          "coverage": 0
+        },
+        "119": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "120": {
+          "source": "    return item;",
+          "coverage": 0
+        },
+        "121": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "122": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "123": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "124": {
+          "source": "   * 添加图形或者分组",
+          "coverage": ""
+        },
+        "125": {
+          "source": "   * @param {Chart.Canvas.Base} item 图形或者分组",
+          "coverage": ""
+        },
+        "126": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "127": {
+          "source": "  addChild : function(item){",
+          "coverage": ""
+        },
+        "128": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "129": {
+          "source": "      children = _self.get('children');",
+          "coverage": ""
+        },
+        "130": {
+          "source": "    children.push(item);",
+          "coverage": 0
+        },
+        "131": {
+          "source": "    item.parent = item;",
+          "coverage": 0
+        },
+        "132": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "133": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "134": {
+          "source": "   * 获取子控件根据索引",
+          "coverage": ""
+        },
+        "135": {
+          "source": "   * @param  {Number} index 索引值",
+          "coverage": ""
+        },
+        "136": {
+          "source": "   * @return {Chart.Canvas.Base} 图形或者分组",
+          "coverage": ""
+        },
+        "137": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "138": {
+          "source": "  getChildAt : function(index){",
+          "coverage": ""
+        },
+        "139": {
+          "source": "    return this.get('children')[index];",
+          "coverage": 0
+        },
+        "140": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "141": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "142": {
+          "source": "   * 获取子控件数目",
+          "coverage": ""
+        },
+        "143": {
+          "source": "   * @return {Number} 数目",
+          "coverage": ""
+        },
+        "144": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "145": {
+          "source": "  getCount : function(){",
+          "coverage": ""
+        },
+        "146": {
+          "source": "    return this.get('children').length;",
+          "coverage": 0
+        },
+        "147": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "148": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "149": {
+          "source": "   * 获取最后一个控件",
+          "coverage": ""
+        },
+        "150": {
+          "source": "   * @return {Chart.Canvas.Base} 图形或者分组",
+          "coverage": ""
+        },
+        "151": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "152": {
+          "source": "  getLast : function(){",
+          "coverage": ""
+        },
+        "153": {
+          "source": "    return this.getChildAt(this.getCount() - 1);",
+          "coverage": 0
+        },
+        "154": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "155": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "156": {
+          "source": "   * 获取第一个控件",
+          "coverage": ""
+        },
+        "157": {
+          "source": "   * @return {Chart.Canvas.Base} 图形或者分组",
+          "coverage": ""
+        },
+        "158": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "159": {
+          "source": "  getFirst : function(){",
+          "coverage": ""
+        },
+        "160": {
+          "source": "    return this.getChildAt(0);",
+          "coverage": 0
+        },
+        "161": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "162": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "163": {
+          "source": "   * 根据id查找分组或者图形",
+          "coverage": ""
+        },
+        "164": {
+          "source": "   * @param  {String} id id",
+          "coverage": ""
+        },
+        "165": {
+          "source": "   * @return {Chart.Canvas.Base} 分组或者图形",
+          "coverage": ""
+        },
+        "166": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "167": {
+          "source": "  find : function(id){",
+          "coverage": ""
+        },
+        "168": {
+          "source": "    var _self = this;",
+          "coverage": 0
+        },
+        "169": {
+          "source": "    return _self.findBy(function(item){",
+          "coverage": 0
+        },
+        "170": {
+          "source": "      return item.get('id') == id;",
+          "coverage": 0
+        },
+        "171": {
+          "source": "    });",
+          "coverage": ""
+        },
+        "172": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "173": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "174": {
+          "source": "   * 排序，将子元素按照zIndex进行排序",
+          "coverage": ""
+        },
+        "175": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "176": {
+          "source": "  sort : function(){",
+          "coverage": ""
+        },
+        "177": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "178": {
+          "source": "      node = _self.get('node'),",
+          "coverage": ""
+        },
+        "179": {
+          "source": "      children = Util.toArray(node.childNodes);",
+          "coverage": ""
+        },
+        "180": {
+          "source": "    if(Util.svg){",
+          "coverage": 0
+        },
+        "181": {
+          "source": "      children.sort(function(obj1,obj2){",
+          "coverage": 0
+        },
+        "182": {
+          "source": "        var zIndex1 = obj1.getAttribute('zIndex') || 0,",
+          "coverage": 0
+        },
+        "183": {
+          "source": "          zIndex2 = obj2.getAttribute('zIndex') || 0;",
+          "coverage": ""
+        },
+        "184": {
+          "source": "        return (+zIndex1) - (+zIndex2);",
+          "coverage": 0
+        },
+        "185": {
+          "source": "      });",
+          "coverage": ""
+        },
+        "186": {
+          "source": "",
+          "coverage": ""
+        },
+        "187": {
+          "source": "      Util.each(children,function(item){",
+          "coverage": 0
+        },
+        "188": {
+          "source": "        node.appendChild(item);",
+          "coverage": 0
+        },
+        "189": {
+          "source": "      });",
+          "coverage": ""
+        },
+        "190": {
+          "source": "    }else{",
+          "coverage": ""
+        },
+        "191": {
+          "source": "      Util.each(children,function(item){",
+          "coverage": 0
+        },
+        "192": {
+          "source": "        var zIndex = item.getAttribute('zIndex');",
+          "coverage": 0
+        },
+        "193": {
+          "source": "",
+          "coverage": ""
+        },
+        "194": {
+          "source": "        if(zIndex){",
+          "coverage": 0
+        },
+        "195": {
+          "source": "          item.style.zIndex = zIndex;",
+          "coverage": 0
+        },
+        "196": {
+          "source": "        } ",
+          "coverage": ""
+        },
+        "197": {
+          "source": "      });",
+          "coverage": ""
+        },
+        "198": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "199": {
+          "source": "    ",
+          "coverage": ""
+        },
+        "200": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "201": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "202": {
+          "source": "   * 根据查找函数查找分组或者图形",
+          "coverage": ""
+        },
+        "203": {
+          "source": "   * @param  {Function} fn 匹配函数",
+          "coverage": ""
+        },
+        "204": {
+          "source": "   * @return {Chart.Canvas.Base} 分组或者图形",
+          "coverage": ""
+        },
+        "205": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "206": {
+          "source": "  findBy : function(fn){",
+          "coverage": ""
+        },
+        "207": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "208": {
+          "source": "      children = _self.get('children'),",
+          "coverage": ""
+        },
+        "209": {
+          "source": "      rst = null;",
+          "coverage": ""
+        },
+        "210": {
+          "source": "    Util.each(children,function(item){",
+          "coverage": 0
+        },
+        "211": {
+          "source": "      if(fn(item)){",
+          "coverage": 0
+        },
+        "212": {
+          "source": "        rst = item;",
+          "coverage": 0
+        },
+        "213": {
+          "source": "        ",
+          "coverage": ""
+        },
+        "214": {
+          "source": "      }else if(item.findBy){",
+          "coverage": 0
+        },
+        "215": {
+          "source": "        rst = item.findBy(fn);",
+          "coverage": 0
+        },
+        "216": {
+          "source": "      }",
+          "coverage": ""
+        },
+        "217": {
+          "source": "      if(rst){",
+          "coverage": 0
+        },
+        "218": {
+          "source": "        return false;",
+          "coverage": 0
+        },
+        "219": {
+          "source": "      }",
+          "coverage": ""
+        },
+        "220": {
+          "source": "    });",
+          "coverage": ""
+        },
+        "221": {
+          "source": "    return rst;",
+          "coverage": 0
+        },
+        "222": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "223": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "224": {
+          "source": "   * 根据dom查找",
+          "coverage": ""
+        },
+        "225": {
+          "source": "   * @param  {HTMLElement} node 节点",
+          "coverage": ""
+        },
+        "226": {
+          "source": "   * @return {Chart.Canvas.Base} 返回分组或者图形",
+          "coverage": ""
+        },
+        "227": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "228": {
+          "source": "  findByNode : function(node){",
+          "coverage": ""
+        },
+        "229": {
+          "source": "    return this.findBy(function(item){",
+          "coverage": 0
+        },
+        "230": {
+          "source": "      return item.get('node') == node;",
+          "coverage": 0
+        },
+        "231": {
+          "source": "    });",
+          "coverage": ""
+        },
+        "232": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "233": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "234": {
+          "source": "   * 清除容器内的图形或者分组",
+          "coverage": ""
+        },
+        "235": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "236": {
+          "source": "  clear : function(){",
+          "coverage": ""
+        },
+        "237": {
+          "source": "    var _self = this,",
+          "coverage": 1
+        },
+        "238": {
+          "source": "      children = _self.get('children');",
+          "coverage": ""
+        },
+        "239": {
+          "source": "    Util.each(children,function(item){",
+          "coverage": 1
+        },
+        "240": {
+          "source": "      item.destroy();",
+          "coverage": 0
+        },
+        "241": {
+          "source": "    });",
+          "coverage": ""
+        },
+        "242": {
+          "source": "    children && Util.empty(children);",
+          "coverage": 1
+        },
+        "243": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "244": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "245": {
+          "source": "   * 析构函数",
+          "coverage": ""
+        },
+        "246": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "247": {
+          "source": "  destroy : function(){",
+          "coverage": ""
+        },
+        "248": {
+          "source": "    var _self = this;",
+          "coverage": 1
+        },
+        "249": {
+          "source": "    if(_self.destroyed){",
+          "coverage": 1
+        },
+        "250": {
+          "source": "      return;",
+          "coverage": 0
+        },
+        "251": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "252": {
+          "source": "    _self.clear();",
+          "coverage": 1
+        },
+        "253": {
+          "source": "",
+          "coverage": ""
+        },
+        "254": {
+          "source": "    Container.superclass.destroy.call(this);",
+          "coverage": 1
+        },
+        "255": {
+          "source": "",
+          "coverage": ""
+        },
+        "256": {
+          "source": "  }",
+          "coverage": ""
+        },
+        "257": {
+          "source": "",
+          "coverage": ""
+        },
+        "258": {
+          "source": "});",
+          "coverage": ""
+        },
+        "259": {
+          "source": "",
+          "coverage": ""
+        },
+        "260": {
+          "source": "module.exports = Container;",
+          "coverage": 1
+        },
+        "261": {
+          "source": "",
+          "coverage": ""
+        }
+      }
+    },
+    {
+      "filename": "/Users/dxq613/Desktop/work/web/graphic/svg/src/group.js",
+      "coverage": 13.725490196078432,
+      "hits": 7,
+      "misses": 44,
+      "sloc": 51,
+      "source": {
+        "1": {
+          "source": "",
+          "coverage": ""
+        },
+        "2": {
+          "source": "var Container = require('./container'),",
+          "coverage": 1
+        },
+        "3": {
+          "source": "  Item = require('./item'),",
+          "coverage": ""
+        },
+        "4": {
+          "source": "  Util = require('./util'),",
+          "coverage": ""
+        },
+        "5": {
+          "source": "  Shape = require('./shape');",
+          "coverage": ""
+        },
+        "6": {
+          "source": "",
+          "coverage": ""
+        },
+        "7": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "8": {
+          "source": " * @class Chart.Canvas.Group",
+          "coverage": ""
+        },
+        "9": {
+          "source": " * 图形分组",
+          "coverage": ""
+        },
+        "10": {
+          "source": " */",
+          "coverage": ""
+        },
+        "11": {
+          "source": "var Group = function(cfg){",
+          "coverage": 1
+        },
+        "12": {
+          "source": "  Group.superclass.constructor.call(this,cfg);",
+          "coverage": 0
+        },
+        "13": {
+          "source": "};",
+          "coverage": ""
+        },
+        "14": {
+          "source": "",
+          "coverage": ""
+        },
+        "15": {
+          "source": "Group.ATTRS = {",
+          "coverage": 1
+        },
+        "16": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "17": {
+          "source": "   * 沿x轴的偏移量",
+          "coverage": ""
+        },
+        "18": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "19": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "20": {
+          "source": "  x : null,",
+          "coverage": ""
+        },
+        "21": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "22": {
+          "source": "   * 沿y轴的偏移量",
+          "coverage": ""
+        },
+        "23": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "24": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "25": {
+          "source": "  y : null",
+          "coverage": ""
+        },
+        "26": {
+          "source": "};",
+          "coverage": ""
+        },
+        "27": {
+          "source": "",
+          "coverage": ""
+        },
+        "28": {
+          "source": "Util.extend(Group,Container);",
+          "coverage": 1
+        },
+        "29": {
+          "source": "",
+          "coverage": ""
+        },
+        "30": {
+          "source": "//获取画布内元素的一些共性方法",
+          "coverage": ""
+        },
+        "31": {
+          "source": "Util.mixin(Group,[Item]);",
+          "coverage": 1
+        },
+        "32": {
+          "source": "",
+          "coverage": ""
+        },
+        "33": {
+          "source": "Util.augment(Group,{",
+          "coverage": 1
+        },
+        "34": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "35": {
+          "source": "   * 是否Group",
+          "coverage": ""
+        },
+        "36": {
+          "source": "   * @type {Boolean}",
+          "coverage": ""
+        },
+        "37": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "38": {
+          "source": "  isGroup : true,",
+          "coverage": ""
+        },
+        "39": {
+          "source": "  //创建DOM ",
+          "coverage": ""
+        },
+        "40": {
+          "source": "  createDom : function(){",
+          "coverage": ""
+        },
+        "41": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "42": {
+          "source": "      el = _self.get('el'),",
+          "coverage": ""
+        },
+        "43": {
+          "source": "      attrs = _self.get('attrs'),",
+          "coverage": ""
+        },
+        "44": {
+          "source": "      node;",
+          "coverage": ""
+        },
+        "45": {
+          "source": "    if(!el){",
+          "coverage": 0
+        },
+        "46": {
+          "source": "      el = _self.createElement();",
+          "coverage": 0
+        },
+        "47": {
+          "source": "      attrs && el.attr(attrs);",
+          "coverage": 0
+        },
+        "48": {
+          "source": "      _self.set('el',el);",
+          "coverage": 0
+        },
+        "49": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "50": {
+          "source": "",
+          "coverage": ""
+        },
+        "51": {
+          "source": "    node = el.node;",
+          "coverage": 0
+        },
+        "52": {
+          "source": "    node.group = _self;",
+          "coverage": 0
+        },
+        "53": {
+          "source": "    _self.set('node',node);",
+          "coverage": 0
+        },
+        "54": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "55": {
+          "source": "  //渲染",
+          "coverage": ""
+        },
+        "56": {
+          "source": "  renderUI : function(){",
+          "coverage": ""
+        },
+        "57": {
+          "source": "    this._initTranslate();",
+          "coverage": 0
+        },
+        "58": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "59": {
+          "source": "  //初始化平移",
+          "coverage": ""
+        },
+        "60": {
+          "source": "  _initTranslate: function(){",
+          "coverage": ""
+        },
+        "61": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "62": {
+          "source": "      x = _self.get('x'),",
+          "coverage": ""
+        },
+        "63": {
+          "source": "      y = _self.get('y');",
+          "coverage": ""
+        },
+        "64": {
+          "source": "    if(x || y){",
+          "coverage": 0
+        },
+        "65": {
+          "source": "      _self._translate((x || 0),(y || 0));",
+          "coverage": 0
+        },
+        "66": {
+          "source": "    }else{",
+          "coverage": ""
+        },
+        "67": {
+          "source": "      _self.set('x',x || 0);",
+          "coverage": 0
+        },
+        "68": {
+          "source": "      _self.set('y',y || 0);",
+          "coverage": 0
+        },
+        "69": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "70": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "71": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "72": {
+          "source": "   * 移动",
+          "coverage": ""
+        },
+        "73": {
+          "source": "   * @param  {Number} dx 沿x轴平移的距离",
+          "coverage": ""
+        },
+        "74": {
+          "source": "   * @param  {Number} dy 沿y轴平移的距离",
+          "coverage": ""
+        },
+        "75": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "76": {
+          "source": "  translate : function(dx,dy){",
+          "coverage": ""
+        },
+        "77": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "78": {
+          "source": "      x = _self.get('x') || 0,",
+          "coverage": ""
+        },
+        "79": {
+          "source": "      y = _self.get('y') || 0;",
+          "coverage": ""
+        },
+        "80": {
+          "source": "    _self.set('x',x + dx);",
+          "coverage": 0
+        },
+        "81": {
+          "source": "    _self.set('y',y + dy);",
+          "coverage": 0
+        },
+        "82": {
+          "source": "    _self._translate(dx,dy);",
+          "coverage": 0
+        },
+        "83": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "84": {
+          "source": "",
+          "coverage": ""
+        },
+        "85": {
+          "source": "  getBBox : function(){",
+          "coverage": ""
+        },
+        "86": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "87": {
+          "source": "      children = _self.get('children'),",
+          "coverage": ""
+        },
+        "88": {
+          "source": "      w = 0,",
+          "coverage": ""
+        },
+        "89": {
+          "source": "      h = 0,",
+          "coverage": ""
+        },
+        "90": {
+          "source": "      rst = {};",
+          "coverage": ""
+        },
+        "91": {
+          "source": "",
+          "coverage": ""
+        },
+        "92": {
+          "source": "    Util.each(children,function(item){",
+          "coverage": 0
+        },
+        "93": {
+          "source": "      var bbox = item.getBBox(),",
+          "coverage": 0
+        },
+        "94": {
+          "source": "        w1 = bbox.width + bbox.x,",
+          "coverage": ""
+        },
+        "95": {
+          "source": "        h1 = bbox.height + bbox.y;",
+          "coverage": ""
+        },
+        "96": {
+          "source": "      if(w < w1){",
+          "coverage": 0
+        },
+        "97": {
+          "source": "        w = w1;",
+          "coverage": 0
+        },
+        "98": {
+          "source": "      }",
+          "coverage": ""
+        },
+        "99": {
+          "source": "      if(h < h1){",
+          "coverage": 0
+        },
+        "100": {
+          "source": "        h = h1;",
+          "coverage": 0
+        },
+        "101": {
+          "source": "      }",
+          "coverage": ""
+        },
+        "102": {
+          "source": "    });",
+          "coverage": ""
+        },
+        "103": {
+          "source": "",
+          "coverage": ""
+        },
+        "104": {
+          "source": "    rst.x = _self.get('x');",
+          "coverage": 0
+        },
+        "105": {
+          "source": "    rst.y = _self.get('y');",
+          "coverage": 0
+        },
+        "106": {
+          "source": "    rst.width = w;",
+          "coverage": 0
+        },
+        "107": {
+          "source": "    rst.height = h;",
+          "coverage": 0
+        },
+        "108": {
+          "source": "",
+          "coverage": ""
+        },
+        "109": {
+          "source": "    return rst;",
+          "coverage": 0
+        },
+        "110": {
+          "source": "",
+          "coverage": ""
+        },
+        "111": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "112": {
+          "source": "  _translate : function(dx,dy){",
+          "coverage": ""
+        },
+        "113": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "114": {
+          "source": "      el = _self.get('el');",
+          "coverage": ""
+        },
+        "115": {
+          "source": "    el.translate(dx,dy);",
+          "coverage": 0
+        },
+        "116": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "117": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "118": {
+          "source": "   * 是否包含指定的DOM",
+          "coverage": ""
+        },
+        "119": {
+          "source": "   * @param  {HTMLElement} element dom元素",
+          "coverage": ""
+        },
+        "120": {
+          "source": "   * @return {Boolean}   是否包含",
+          "coverage": ""
+        },
+        "121": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "122": {
+          "source": "  containsElement : function(element){",
+          "coverage": ""
+        },
+        "123": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "124": {
+          "source": "      node = _self.get('node');",
+          "coverage": ""
+        },
+        "125": {
+          "source": "    return node == element || Util.contains(node,element);",
+          "coverage": 0
+        },
+        "126": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "127": {
+          "source": "  ",
+          "coverage": ""
+        },
+        "128": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "129": {
+          "source": "   * 移动的到位置",
+          "coverage": ""
+        },
+        "130": {
+          "source": "   * @param  {Number} x 移动到x",
+          "coverage": ""
+        },
+        "131": {
+          "source": "   * @param  {Number} y 移动到y",
+          "coverage": ""
+        },
+        "132": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "133": {
+          "source": "  move : function(x,y){",
+          "coverage": ""
+        },
+        "134": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "135": {
+          "source": "      cx = _self.get('x') || 0, //当前的x",
+          "coverage": ""
+        },
+        "136": {
+          "source": "      cy = _self.get('y') || 0; //当前的y",
+          "coverage": ""
+        },
+        "137": {
+          "source": "    if(Util.svg){",
+          "coverage": 0
+        },
+        "138": {
+          "source": "      _self._translate(x - cx,y -cy);",
+          "coverage": 0
+        },
+        "139": {
+          "source": "    }else{",
+          "coverage": ""
+        },
+        "140": {
+          "source": "      _self.get('el').move(x,y);",
+          "coverage": 0
+        },
+        "141": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "142": {
+          "source": "    ",
+          "coverage": ""
+        },
+        "143": {
+          "source": "    _self.set('x',x);",
+          "coverage": 0
+        },
+        "144": {
+          "source": "    _self.set('y',y);",
+          "coverage": 0
+        },
+        "145": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "146": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "147": {
+          "source": "   * @private",
+          "coverage": ""
+        },
+        "148": {
+          "source": "   * @ignore",
+          "coverage": ""
+        },
+        "149": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "150": {
+          "source": "  createElement : function(){",
+          "coverage": ""
+        },
+        "151": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "152": {
+          "source": "      el = _self.get('parent').get('el');",
+          "coverage": ""
+        },
+        "153": {
+          "source": "    return el.group();",
+          "coverage": 0
+        },
+        "154": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "155": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "156": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "157": {
+          "source": "   * @ignore",
+          "coverage": ""
+        },
+        "158": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "159": {
+          "source": "  getGroupClass : function(){",
+          "coverage": ""
+        },
+        "160": {
+          "source": "    return Group;",
+          "coverage": 0
+        },
+        "161": {
+          "source": "  }",
+          "coverage": ""
+        },
+        "162": {
+          "source": "  ",
+          "coverage": ""
+        },
+        "163": {
+          "source": "",
+          "coverage": ""
+        },
+        "164": {
+          "source": "});",
+          "coverage": ""
+        },
+        "165": {
+          "source": "",
+          "coverage": ""
+        },
+        "166": {
+          "source": "module.exports = Group;",
+          "coverage": 1
+        },
+        "167": {
+          "source": "",
+          "coverage": ""
+        }
+      }
+    },
+    {
+      "filename": "/Users/dxq613/Desktop/work/web/graphic/svg/src/item.js",
+      "coverage": 30.76923076923077,
+      "hits": 4,
+      "misses": 9,
+      "sloc": 13,
+      "source": {
+        "1": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "2": {
+          "source": " * @fileOverview 画布内部的元素扩展",
+          "coverage": ""
+        },
+        "3": {
+          "source": " * @ignore",
+          "coverage": ""
+        },
+        "4": {
+          "source": " */",
+          "coverage": ""
+        },
+        "5": {
+          "source": "  ",
+          "coverage": ""
+        },
+        "6": {
+          "source": "var Util = require('./util');",
+          "coverage": 1
+        },
+        "7": {
+          "source": "",
+          "coverage": ""
+        },
+        "8": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "9": {
+          "source": " * @class Chart.Canvas.CanvasItem",
+          "coverage": ""
+        },
+        "10": {
+          "source": " * 画布内部元素的一些公用方法的扩展，仅作为接口使用",
+          "coverage": ""
+        },
+        "11": {
+          "source": " */",
+          "coverage": ""
+        },
+        "12": {
+          "source": "var Item = function(){",
+          "coverage": 1
+        },
+        "13": {
+          "source": "",
+          "coverage": ""
+        },
+        "14": {
+          "source": "};",
+          "coverage": ""
+        },
+        "15": {
+          "source": "",
+          "coverage": ""
+        },
+        "16": {
+          "source": "Util.augment(Item,{",
+          "coverage": 1
+        },
+        "17": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "18": {
+          "source": "   * 到达最高层次 z-index",
+          "coverage": ""
+        },
+        "19": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "20": {
+          "source": "  toFront : function(){",
+          "coverage": ""
+        },
+        "21": {
+          "source": "    return this;",
+          "coverage": 0
+        },
+        "22": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "23": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "24": {
+          "source": "   * 最底层",
+          "coverage": ""
+        },
+        "25": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "26": {
+          "source": "  toBack : function(){",
+          "coverage": ""
+        },
+        "27": {
+          "source": "    return this;",
+          "coverage": 0
+        },
+        "28": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "29": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "30": {
+          "source": "   * 移动",
+          "coverage": ""
+        },
+        "31": {
+          "source": "   * @param  {Number} dx 沿x轴平移的距离",
+          "coverage": ""
+        },
+        "32": {
+          "source": "   * @param  {Number} dy 沿y轴平移的距离",
+          "coverage": ""
+        },
+        "33": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "34": {
+          "source": "  translate : function(dx,dy){",
+          "coverage": ""
+        },
+        "35": {
+          "source": "   ",
+          "coverage": ""
+        },
+        "36": {
+          "source": "    return this;",
+          "coverage": 0
+        },
+        "37": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "38": {
+          "source": "  scale : function(sx,sy){",
+          "coverage": ""
+        },
+        "39": {
+          "source": "",
+          "coverage": ""
+        },
+        "40": {
+          "source": "    return this;",
+          "coverage": 0
+        },
+        "41": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "42": {
+          "source": "  rotate : function(angle){",
+          "coverage": ""
+        },
+        "43": {
+          "source": "",
+          "coverage": ""
+        },
+        "44": {
+          "source": "    return this;",
+          "coverage": 0
+        },
+        "45": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "46": {
+          "source": "  skew : function(){",
+          "coverage": ""
+        },
+        "47": {
+          "source": "",
+          "coverage": ""
+        },
+        "48": {
+          "source": "    return this;",
+          "coverage": 0
+        },
+        "49": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "50": {
+          "source": "  transform : function(){",
+          "coverage": ""
+        },
+        "51": {
+          "source": "",
+          "coverage": ""
+        },
+        "52": {
+          "source": "    return this;",
+          "coverage": 0
+        },
+        "53": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "54": {
+          "source": "  index : function(){",
+          "coverage": ""
+        },
+        "55": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "56": {
+          "source": "      parent = _self.get('parent');",
+          "coverage": ""
+        },
+        "57": {
+          "source": "    return Util.indexOf(parent.get('children'),_self);",
+          "coverage": 0
+        },
+        "58": {
+          "source": "  }",
+          "coverage": ""
+        },
+        "59": {
+          "source": "});",
+          "coverage": ""
+        },
+        "60": {
+          "source": "",
+          "coverage": ""
+        },
+        "61": {
+          "source": "module.exports = Item;",
+          "coverage": 1
+        },
+        "62": {
+          "source": "",
+          "coverage": ""
+        }
+      }
+    },
+    {
+      "filename": "/Users/dxq613/Desktop/work/web/graphic/svg/src/shape.js",
+      "coverage": 26.635514018691588,
+      "hits": 57,
+      "misses": 157,
+      "sloc": 214,
+      "source": {
+        "1": {
+          "source": "var Base = require('./base'),",
+          "coverage": 1
+        },
+        "2": {
+          "source": "  Item = require('./item'),",
+          "coverage": ""
+        },
+        "3": {
+          "source": "  Util = require('./util');",
+          "coverage": ""
+        },
+        "4": {
+          "source": "  ",
+          "coverage": ""
+        },
+        "5": {
+          "source": "",
+          "coverage": ""
+        },
+        "6": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "7": {
+          "source": " * @class Chart.Canvas.Shape",
+          "coverage": ""
+        },
+        "8": {
+          "source": " * 图形的基类",
+          "coverage": ""
+        },
+        "9": {
+          "source": " * @extends Chart.Canvas.Base",
+          "coverage": ""
+        },
+        "10": {
+          "source": " */",
+          "coverage": ""
+        },
+        "11": {
+          "source": "var Shape = function(cfg){",
+          "coverage": 1
+        },
+        "12": {
+          "source": "  Shape.superclass.constructor.call(this,cfg);",
+          "coverage": 0
+        },
+        "13": {
+          "source": "};",
+          "coverage": ""
+        },
+        "14": {
+          "source": "",
+          "coverage": ""
+        },
+        "15": {
+          "source": "Shape.ATTRS = {",
+          "coverage": 1
+        },
+        "16": {
+          "source": "  attrs : {}",
+          "coverage": ""
+        },
+        "17": {
+          "source": "}",
+          "coverage": ""
+        },
+        "18": {
+          "source": "",
+          "coverage": ""
+        },
+        "19": {
+          "source": "Util.extend(Shape,Base);",
+          "coverage": 1
+        },
+        "20": {
+          "source": "",
+          "coverage": ""
+        },
+        "21": {
+          "source": "//获取画布内元素的一些共性方法",
+          "coverage": ""
+        },
+        "22": {
+          "source": "Util.mixin(Shape,[Item]);",
+          "coverage": 1
+        },
+        "23": {
+          "source": "",
+          "coverage": ""
+        },
+        "24": {
+          "source": "Util.augment(Shape,{",
+          "coverage": 1
+        },
+        "25": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "26": {
+          "source": "   * 是否图形",
+          "coverage": ""
+        },
+        "27": {
+          "source": "   * @type {Boolean}",
+          "coverage": ""
+        },
+        "28": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "29": {
+          "source": "  isShape : true,",
+          "coverage": ""
+        },
+        "30": {
+          "source": "  ",
+          "coverage": ""
+        },
+        "31": {
+          "source": "  //渲染shape",
+          "coverage": ""
+        },
+        "32": {
+          "source": "  createDom : function(){",
+          "coverage": ""
+        },
+        "33": {
+          "source": "",
+          "coverage": ""
+        },
+        "34": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "35": {
+          "source": "      el = _self.get('el'),",
+          "coverage": ""
+        },
+        "36": {
+          "source": "      node,",
+          "coverage": ""
+        },
+        "37": {
+          "source": "      cfg,",
+          "coverage": ""
+        },
+        "38": {
+          "source": "      attrs;",
+          "coverage": ""
+        },
+        "39": {
+          "source": "    if(!el){",
+          "coverage": 0
+        },
+        "40": {
+          "source": "      cfg = _self.cfg;",
+          "coverage": 0
+        },
+        "41": {
+          "source": "      attrs = _self.parseElCfg(cfg.attrs);",
+          "coverage": 0
+        },
+        "42": {
+          "source": "      el = _self.createElement(attrs);",
+          "coverage": 0
+        },
+        "43": {
+          "source": "      _self.set('el',el);",
+          "coverage": 0
+        },
+        "44": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "45": {
+          "source": "    node = el.node;",
+          "coverage": 0
+        },
+        "46": {
+          "source": "    node.shape = this;",
+          "coverage": 0
+        },
+        "47": {
+          "source": "",
+          "coverage": ""
+        },
+        "48": {
+          "source": "    _self.set('node',node);",
+          "coverage": 0
+        },
+        "49": {
+          "source": "    if(this.get('visible') == false){",
+          "coverage": 0
+        },
+        "50": {
+          "source": "      el.hide();",
+          "coverage": 0
+        },
+        "51": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "52": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "53": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "54": {
+          "source": "   * @private",
+          "coverage": ""
+        },
+        "55": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "56": {
+          "source": "  createElement : function(attrs){",
+          "coverage": ""
+        },
+        "57": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "58": {
+          "source": "      parent = _self.get('parent'),",
+          "coverage": ""
+        },
+        "59": {
+          "source": "      set = parent.get('el').add([attrs]),",
+          "coverage": ""
+        },
+        "60": {
+          "source": "      element;",
+          "coverage": ""
+        },
+        "61": {
+          "source": "    element = set[0];",
+          "coverage": 0
+        },
+        "62": {
+          "source": "    return element;",
+          "coverage": 0
+        },
+        "63": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "64": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "65": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "66": {
+          "source": "   * 格式化初始化配置项",
+          "coverage": ""
+        },
+        "67": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "68": {
+          "source": "  parseElCfg : function(attrs){",
+          "coverage": ""
+        },
+        "69": {
+          "source": "    attrs.type = this.get('type');",
+          "coverage": 0
+        },
+        "70": {
+          "source": "    return attrs;",
+          "coverage": 0
+        },
+        "71": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "72": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "73": {
+          "source": "   * 获取图形的整体长度",
+          "coverage": ""
+        },
+        "74": {
+          "source": "   * @return {Number} 长度",
+          "coverage": ""
+        },
+        "75": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "76": {
+          "source": "  getTotalLength : function(){",
+          "coverage": ""
+        },
+        "77": {
+          "source": "    return this.get('el').getTotalLength();",
+          "coverage": 0
+        },
+        "78": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "79": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "80": {
+          "source": "   * 旋转",
+          "coverage": ""
+        },
+        "81": {
+          "source": "   * @param  {Number} a 旋转的角度",
+          "coverage": ""
+        },
+        "82": {
+          "source": "   * @param  {Number} x 旋转的中心点 x",
+          "coverage": ""
+        },
+        "83": {
+          "source": "   * @param  {Number} y 旋转的中心点 y",
+          "coverage": ""
+        },
+        "84": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "85": {
+          "source": "  rotate : function(a, x, y){",
+          "coverage": ""
+        },
+        "86": {
+          "source": "    var _self = this;",
+          "coverage": 0
+        },
+        "87": {
+          "source": "    if(_self.isGroup){",
+          "coverage": 0
+        },
+        "88": {
+          "source": "      if(x == null && y == null){",
+          "coverage": 0
+        },
+        "89": {
+          "source": "        var tpoint = _self._getTranslatePoint();",
+          "coverage": 0
+        },
+        "90": {
+          "source": "        x = tpoint.x;",
+          "coverage": 0
+        },
+        "91": {
+          "source": "        y = tpoint.y;",
+          "coverage": 0
+        },
+        "92": {
+          "source": "      }",
+          "coverage": ""
+        },
+        "93": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "94": {
+          "source": "    this.get('el').rotate(a,x,y);",
+          "coverage": 0
+        },
+        "95": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "96": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "97": {
+          "source": "   * 放大",
+          "coverage": ""
+        },
+        "98": {
+          "source": "   * @param  {Number} sx x轴方向的倍数 ",
+          "coverage": ""
+        },
+        "99": {
+          "source": "   * @param  {Number} sy y轴方向的倍数",
+          "coverage": ""
+        },
+        "100": {
+          "source": "   * @param  {Number} cx x轴方向扩展的中心",
+          "coverage": ""
+        },
+        "101": {
+          "source": "   * @param  {Number} cy y轴方向扩展的中心",
+          "coverage": ""
+        },
+        "102": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "103": {
+          "source": "  scale : function(sx, sy, cx,cy){",
+          "coverage": ""
+        },
+        "104": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "105": {
+          "source": "      el = _self.get('el');",
+          "coverage": ""
+        },
+        "106": {
+          "source": "    ",
+          "coverage": ""
+        },
+        "107": {
+          "source": "    el.scale(sx, sy, cx,cy);",
+          "coverage": 0
+        },
+        "108": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "109": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "110": {
+          "source": "   * 直接使用transform方法 <br>",
+          "coverage": ""
+        },
+        "111": {
+          "source": "   *  \"t100,100r30,100,100s2,2,100,100r45s1.5\"",
+          "coverage": ""
+        },
+        "112": {
+          "source": "   *   - ",
+          "coverage": ""
+        },
+        "113": {
+          "source": "   * @param  {String} tstr 几何转换的字符串",
+          "coverage": ""
+        },
+        "114": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "115": {
+          "source": "  transform : function(tstr){",
+          "coverage": ""
+        },
+        "116": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "117": {
+          "source": "      el = _self.get('el');",
+          "coverage": ""
+        },
+        "118": {
+          "source": "    el.transform(tstr);",
+          "coverage": 0
+        },
+        "119": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "120": {
+          "source": "  getBBox : function(){",
+          "coverage": ""
+        },
+        "121": {
+          "source": "    return this.get('el').getBBox();",
+          "coverage": 0
+        },
+        "122": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "123": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "124": {
+          "source": "   * 获取路径",
+          "coverage": ""
+        },
+        "125": {
+          "source": "   * @return {Array} 路径的数组",
+          "coverage": ""
+        },
+        "126": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "127": {
+          "source": "  getPath : function(){",
+          "coverage": ""
+        },
+        "128": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "129": {
+          "source": "      el = _self.get('el'),",
+          "coverage": ""
+        },
+        "130": {
+          "source": "      path = el.getPath();",
+          "coverage": ""
+        },
+        "131": {
+          "source": "    if(Util.isString(path)){",
+          "coverage": 0
+        },
+        "132": {
+          "source": "      path = Util.parsePathString(path);",
+          "coverage": 0
+        },
+        "133": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "134": {
+          "source": "    return path;",
+          "coverage": 0
+        },
+        "135": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "136": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "137": {
+          "source": "   * 获取路径字符串",
+          "coverage": ""
+        },
+        "138": {
+          "source": "   * @return {String} 路径的字符串",
+          "coverage": ""
+        },
+        "139": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "140": {
+          "source": "  getPathString : function(){",
+          "coverage": ""
+        },
+        "141": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "142": {
+          "source": "      path = _self.getPath();",
+          "coverage": ""
+        },
+        "143": {
+          "source": "    return Util.parsePathArray(path);",
+          "coverage": 0
+        },
+        "144": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "145": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "146": {
+          "source": "   * 获取使用平移后的path",
+          "coverage": ""
+        },
+        "147": {
+          "source": "   * @return {Array} 路径的数组",
+          "coverage": ""
+        },
+        "148": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "149": {
+          "source": "  getTransformPath : function(){",
+          "coverage": ""
+        },
+        "150": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "151": {
+          "source": "      path = _self.getPath(),",
+          "coverage": ""
+        },
+        "152": {
+          "source": "      matrix = _self.get('el').matrix;",
+          "coverage": ""
+        },
+        "153": {
+          "source": "    return Util.transformPath(path,matrix.toTransformString());",
+          "coverage": 0
+        },
+        "154": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "155": {
+          "source": "  //获取到移动的位置",
+          "coverage": ""
+        },
+        "156": {
+          "source": "  _getTranslatePoint : function(){",
+          "coverage": ""
+        },
+        "157": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "158": {
+          "source": "      tPath = _self.getTransformPath(),",
+          "coverage": ""
+        },
+        "159": {
+          "source": "      rst = {x : 0,y : 0};",
+          "coverage": ""
+        },
+        "160": {
+          "source": "    Util.each(tPath,function(item){",
+          "coverage": 0
+        },
+        "161": {
+          "source": "      if(item[0] == 'M'){",
+          "coverage": 0
+        },
+        "162": {
+          "source": "        rst.x = item[1];",
+          "coverage": 0
+        },
+        "163": {
+          "source": "        rst.y = item[2];",
+          "coverage": 0
+        },
+        "164": {
+          "source": "      }",
+          "coverage": ""
+        },
+        "165": {
+          "source": "    });",
+          "coverage": ""
+        },
+        "166": {
+          "source": "    return rst;",
+          "coverage": 0
+        },
+        "167": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "168": {
+          "source": "  //获取转换的信息，返回一个数组，处理非数组的场景",
+          "coverage": ""
+        },
+        "169": {
+          "source": "  __getTransform : function(value){",
+          "coverage": ""
+        },
+        "170": {
+          "source": "    if(Util.isString(value)){",
+          "coverage": 0
+        },
+        "171": {
+          "source": "      value = value.replace(/([t,s,r])/,';$1 ').split(';');",
+          "coverage": 0
+        },
+        "172": {
+          "source": "      var temp = [];",
+          "coverage": 0
+        },
+        "173": {
+          "source": "      Util.each(value,function(str){",
+          "coverage": 0
+        },
+        "174": {
+          "source": "        if(str){",
+          "coverage": 0
+        },
+        "175": {
+          "source": "          var sub = str.split(' ');",
+          "coverage": 0
+        },
+        "176": {
+          "source": "          sub = Util.map(sub,function(subStr){",
+          "coverage": 0
+        },
+        "177": {
+          "source": "            if(Util.isNumeric(subStr)){",
+          "coverage": 0
+        },
+        "178": {
+          "source": "              return parseFloat(subStr);",
+          "coverage": 0
+        },
+        "179": {
+          "source": "            }",
+          "coverage": ""
+        },
+        "180": {
+          "source": "            return subStr;",
+          "coverage": 0
+        },
+        "181": {
+          "source": "          });",
+          "coverage": ""
+        },
+        "182": {
+          "source": "          temp.push(sub);",
+          "coverage": 0
+        },
+        "183": {
+          "source": "        }",
+          "coverage": ""
+        },
+        "184": {
+          "source": "      });",
+          "coverage": ""
+        },
+        "185": {
+          "source": "      value = temp;",
+          "coverage": 0
+        },
+        "186": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "187": {
+          "source": "    return value;",
+          "coverage": 0
+        },
+        "188": {
+          "source": "  }",
+          "coverage": ""
+        },
+        "189": {
+          "source": "});",
+          "coverage": ""
+        },
+        "190": {
+          "source": "",
+          "coverage": ""
+        },
+        "191": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "192": {
+          "source": " * 圆",
+          "coverage": ""
+        },
+        "193": {
+          "source": " * @class Chart.Canvas.Shape.Circle",
+          "coverage": ""
+        },
+        "194": {
+          "source": " * @extends Chart.Canvas.Shape",
+          "coverage": ""
+        },
+        "195": {
+          "source": " */",
+          "coverage": ""
+        },
+        "196": {
+          "source": "var Circle = function(cfg){",
+          "coverage": 1
+        },
+        "197": {
+          "source": "  Circle.superclass.constructor.call(this,cfg);",
+          "coverage": 0
+        },
+        "198": {
+          "source": "};",
+          "coverage": ""
+        },
+        "199": {
+          "source": "",
+          "coverage": ""
+        },
+        "200": {
+          "source": "Circle.ATTRS = {",
+          "coverage": 1
+        },
+        "201": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "202": {
+          "source": "   * 圆心的x坐标",
+          "coverage": ""
+        },
+        "203": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "204": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "205": {
+          "source": "  cx : {},",
+          "coverage": ""
+        },
+        "206": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "207": {
+          "source": "   * 圆心的y坐标",
+          "coverage": ""
+        },
+        "208": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "209": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "210": {
+          "source": "  cy : {},",
+          "coverage": ""
+        },
+        "211": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "212": {
+          "source": "   * 圆的半径",
+          "coverage": ""
+        },
+        "213": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "214": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "215": {
+          "source": "  r : {}",
+          "coverage": ""
+        },
+        "216": {
+          "source": "};",
+          "coverage": ""
+        },
+        "217": {
+          "source": "",
+          "coverage": ""
+        },
+        "218": {
+          "source": "Util.extend(Circle,Shape);",
+          "coverage": 1
+        },
+        "219": {
+          "source": "",
+          "coverage": ""
+        },
+        "220": {
+          "source": "Shape.Circle = Circle;",
+          "coverage": 1
+        },
+        "221": {
+          "source": "",
+          "coverage": ""
+        },
+        "222": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "223": {
+          "source": " * 矩形",
+          "coverage": ""
+        },
+        "224": {
+          "source": " * @class Chart.Canvas.Shape.Rect",
+          "coverage": ""
+        },
+        "225": {
+          "source": " * @extends Chart.Canvas.Shape",
+          "coverage": ""
+        },
+        "226": {
+          "source": " */",
+          "coverage": ""
+        },
+        "227": {
+          "source": "var Rect = function(cfg){",
+          "coverage": 1
+        },
+        "228": {
+          "source": "  Rect.superclass.constructor.call(this,cfg);",
+          "coverage": 0
+        },
+        "229": {
+          "source": "};",
+          "coverage": ""
+        },
+        "230": {
+          "source": "",
+          "coverage": ""
+        },
+        "231": {
+          "source": "Rect.ATTRS = {",
+          "coverage": 1
+        },
+        "232": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "233": {
+          "source": "   * 矩形的左定点x坐标",
+          "coverage": ""
+        },
+        "234": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "235": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "236": {
+          "source": "  x : {},",
+          "coverage": ""
+        },
+        "237": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "238": {
+          "source": "   * 矩形的左定点y坐标",
+          "coverage": ""
+        },
+        "239": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "240": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "241": {
+          "source": "  y : {},",
+          "coverage": ""
+        },
+        "242": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "243": {
+          "source": "   * 矩形的宽度",
+          "coverage": ""
+        },
+        "244": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "245": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "246": {
+          "source": "  width : {},",
+          "coverage": ""
+        },
+        "247": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "248": {
+          "source": "   * 矩形的高度",
+          "coverage": ""
+        },
+        "249": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "250": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "251": {
+          "source": "  height : {},",
+          "coverage": ""
+        },
+        "252": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "253": {
+          "source": "   * 圆角",
+          "coverage": ""
+        },
+        "254": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "255": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "256": {
+          "source": "  r: {",
+          "coverage": ""
+        },
+        "257": {
+          "source": "    value : 0",
+          "coverage": ""
+        },
+        "258": {
+          "source": "  }",
+          "coverage": ""
+        },
+        "259": {
+          "source": "};",
+          "coverage": ""
+        },
+        "260": {
+          "source": "",
+          "coverage": ""
+        },
+        "261": {
+          "source": "Util.extend(Rect,Shape);",
+          "coverage": 1
+        },
+        "262": {
+          "source": "Shape.Rect = Rect;",
+          "coverage": 1
+        },
+        "263": {
+          "source": "",
+          "coverage": ""
+        },
+        "264": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "265": {
+          "source": " * 矩形",
+          "coverage": ""
+        },
+        "266": {
+          "source": " * @class Chart.Canvas.Shape.Ellipse",
+          "coverage": ""
+        },
+        "267": {
+          "source": " * @extends Chart.Canvas.Shape",
+          "coverage": ""
+        },
+        "268": {
+          "source": " */",
+          "coverage": ""
+        },
+        "269": {
+          "source": "var Ellipse = function(cfg){",
+          "coverage": 1
+        },
+        "270": {
+          "source": "  Ellipse.superclass.constructor.call(this,cfg);",
+          "coverage": 0
+        },
+        "271": {
+          "source": "};",
+          "coverage": ""
+        },
+        "272": {
+          "source": "",
+          "coverage": ""
+        },
+        "273": {
+          "source": "Ellipse.ATTRS = {",
+          "coverage": 1
+        },
+        "274": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "275": {
+          "source": "   * 矩形的左定点x坐标",
+          "coverage": ""
+        },
+        "276": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "277": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "278": {
+          "source": "  cx : {},",
+          "coverage": ""
+        },
+        "279": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "280": {
+          "source": "   * 矩形的左定点y坐标",
+          "coverage": ""
+        },
+        "281": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "282": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "283": {
+          "source": "  cy : {},",
+          "coverage": ""
+        },
+        "284": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "285": {
+          "source": "   * 矩形的宽度",
+          "coverage": ""
+        },
+        "286": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "287": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "288": {
+          "source": "  rx : {},",
+          "coverage": ""
+        },
+        "289": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "290": {
+          "source": "   * 矩形的高度",
+          "coverage": ""
+        },
+        "291": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "292": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "293": {
+          "source": "  ry : {}",
+          "coverage": ""
+        },
+        "294": {
+          "source": "};",
+          "coverage": ""
+        },
+        "295": {
+          "source": "",
+          "coverage": ""
+        },
+        "296": {
+          "source": "Util.extend(Ellipse,Shape);",
+          "coverage": 1
+        },
+        "297": {
+          "source": "Shape.Ellipse = Ellipse;",
+          "coverage": 1
+        },
+        "298": {
+          "source": "",
+          "coverage": ""
+        },
+        "299": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "300": {
+          "source": " * 路径",
+          "coverage": ""
+        },
+        "301": {
+          "source": " * @class Chart.Canvas.Shape.Path",
+          "coverage": ""
+        },
+        "302": {
+          "source": " * @extends Chart.Canvas.Shape",
+          "coverage": ""
+        },
+        "303": {
+          "source": " */",
+          "coverage": ""
+        },
+        "304": {
+          "source": "var Path = function(cfg){",
+          "coverage": 1
+        },
+        "305": {
+          "source": "  Path.superclass.constructor.call(this,cfg);",
+          "coverage": 0
+        },
+        "306": {
+          "source": "};",
+          "coverage": ""
+        },
+        "307": {
+          "source": "",
+          "coverage": ""
+        },
+        "308": {
+          "source": "Path.ATTRS = {",
+          "coverage": 1
+        },
+        "309": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "310": {
+          "source": "   * 路径",
+          "coverage": ""
+        },
+        "311": {
+          "source": "   * @type {String}",
+          "coverage": ""
+        },
+        "312": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "313": {
+          "source": "  path : {}",
+          "coverage": ""
+        },
+        "314": {
+          "source": "};",
+          "coverage": ""
+        },
+        "315": {
+          "source": "",
+          "coverage": ""
+        },
+        "316": {
+          "source": "",
+          "coverage": ""
+        },
+        "317": {
+          "source": "Util.extend(Path,Shape);",
+          "coverage": 1
+        },
+        "318": {
+          "source": "",
+          "coverage": ""
+        },
+        "319": {
+          "source": "Shape.Path = Path;",
+          "coverage": 1
+        },
+        "320": {
+          "source": "",
+          "coverage": ""
+        },
+        "321": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "322": {
+          "source": " * 直线",
+          "coverage": ""
+        },
+        "323": {
+          "source": " * @class Chart.Canvas.Shape.Line",
+          "coverage": ""
+        },
+        "324": {
+          "source": " * @extends Chart.Canvas.Shape.Path",
+          "coverage": ""
+        },
+        "325": {
+          "source": " */",
+          "coverage": ""
+        },
+        "326": {
+          "source": "var Line = function(cfg){",
+          "coverage": 1
+        },
+        "327": {
+          "source": "  Line.superclass.constructor.call(this,cfg);",
+          "coverage": 0
+        },
+        "328": {
+          "source": "};",
+          "coverage": ""
+        },
+        "329": {
+          "source": "",
+          "coverage": ""
+        },
+        "330": {
+          "source": "Line.ATTRS = {",
+          "coverage": 1
+        },
+        "331": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "332": {
+          "source": "   * 起始x坐标",
+          "coverage": ""
+        },
+        "333": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "334": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "335": {
+          "source": "  x1 : {},",
+          "coverage": ""
+        },
+        "336": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "337": {
+          "source": "   * 起始y坐标",
+          "coverage": ""
+        },
+        "338": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "339": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "340": {
+          "source": "  y1 : {},",
+          "coverage": ""
+        },
+        "341": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "342": {
+          "source": "   * 终止x坐标",
+          "coverage": ""
+        },
+        "343": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "344": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "345": {
+          "source": "  x2 : {},",
+          "coverage": ""
+        },
+        "346": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "347": {
+          "source": "   * 终止y坐标",
+          "coverage": ""
+        },
+        "348": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "349": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "350": {
+          "source": "  y2 : {}",
+          "coverage": ""
+        },
+        "351": {
+          "source": "};",
+          "coverage": ""
+        },
+        "352": {
+          "source": "",
+          "coverage": ""
+        },
+        "353": {
+          "source": "Util.extend(Line,Path);",
+          "coverage": 1
+        },
+        "354": {
+          "source": "",
+          "coverage": ""
+        },
+        "355": {
+          "source": "Util.augment(Line,{",
+          "coverage": 1
+        },
+        "356": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "357": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "358": {
+          "source": "   * 格式化初始化配置项",
+          "coverage": ""
+        },
+        "359": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "360": {
+          "source": "  parseElCfg : function(attrs){",
+          "coverage": ""
+        },
+        "361": {
+          "source": "    attrs.type = 'path'; //将线转换成path",
+          "coverage": 0
+        },
+        "362": {
+          "source": "    attrs.path = Util.substitute('M {x1},{y1}L{x2},{y2}',attrs);",
+          "coverage": 0
+        },
+        "363": {
+          "source": "    return attrs;",
+          "coverage": 0
+        },
+        "364": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "365": {
+          "source": "  //获取线的坐标点",
+          "coverage": ""
+        },
+        "366": {
+          "source": "  _getLinePoint : function(pointIndex,coordIndex){",
+          "coverage": ""
+        },
+        "367": {
+          "source": "    var path = this.getPath();",
+          "coverage": 0
+        },
+        "368": {
+          "source": "    return path[pointIndex][coordIndex];",
+          "coverage": 0
+        },
+        "369": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "370": {
+          "source": "  //设置线的坐标点",
+          "coverage": ""
+        },
+        "371": {
+          "source": "  _setLinePoint : function(pointIndex,coordIndex,value){",
+          "coverage": ""
+        },
+        "372": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "373": {
+          "source": "      path = this.getPath();",
+          "coverage": ""
+        },
+        "374": {
+          "source": "    path[pointIndex][coordIndex] = value;",
+          "coverage": 0
+        },
+        "375": {
+          "source": "    _self.attr('path',path);",
+          "coverage": 0
+        },
+        "376": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "377": {
+          "source": "  //设置坐标x1",
+          "coverage": ""
+        },
+        "378": {
+          "source": "  __setX1 : function(value){",
+          "coverage": ""
+        },
+        "379": {
+          "source": "    this._setLinePoint(0,1,value);",
+          "coverage": 0
+        },
+        "380": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "381": {
+          "source": "  __getX1 : function(){",
+          "coverage": ""
+        },
+        "382": {
+          "source": "    return this._getLinePoint(0,1);",
+          "coverage": 0
+        },
+        "383": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "384": {
+          "source": "  //设置坐标x2",
+          "coverage": ""
+        },
+        "385": {
+          "source": "  __setX2 : function(value){",
+          "coverage": ""
+        },
+        "386": {
+          "source": "    this._setLinePoint(1,1,value);",
+          "coverage": 0
+        },
+        "387": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "388": {
+          "source": "  __getX2 : function(){",
+          "coverage": ""
+        },
+        "389": {
+          "source": "    return this._getLinePoint(1,1);",
+          "coverage": 0
+        },
+        "390": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "391": {
+          "source": "  //设置坐标y1",
+          "coverage": ""
+        },
+        "392": {
+          "source": "  __setY1 : function(value){",
+          "coverage": ""
+        },
+        "393": {
+          "source": "    this._setLinePoint(0,2,value);",
+          "coverage": 0
+        },
+        "394": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "395": {
+          "source": "  __getY1 : function(){",
+          "coverage": ""
+        },
+        "396": {
+          "source": "    return this._getLinePoint(0,2);",
+          "coverage": 0
+        },
+        "397": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "398": {
+          "source": "  //设置坐标y2",
+          "coverage": ""
+        },
+        "399": {
+          "source": "  __setY2 : function(value){",
+          "coverage": ""
+        },
+        "400": {
+          "source": "    this._setLinePoint(1,2,value);",
+          "coverage": 0
+        },
+        "401": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "402": {
+          "source": "  __getY2 : function(){",
+          "coverage": ""
+        },
+        "403": {
+          "source": "    return this._getLinePoint(1,2);",
+          "coverage": 0
+        },
+        "404": {
+          "source": "  }",
+          "coverage": ""
+        },
+        "405": {
+          "source": "});",
+          "coverage": ""
+        },
+        "406": {
+          "source": "",
+          "coverage": ""
+        },
+        "407": {
+          "source": "Shape.Line = Line;",
+          "coverage": 1
+        },
+        "408": {
+          "source": "",
+          "coverage": ""
+        },
+        "409": {
+          "source": "",
+          "coverage": ""
+        },
+        "410": {
+          "source": "function points2path(points,z){",
+          "coverage": ""
+        },
+        "411": {
+          "source": "  if(Util.isArray(points)){",
+          "coverage": 0
+        },
+        "412": {
+          "source": "    points = points.join(' ');",
+          "coverage": 0
+        },
+        "413": {
+          "source": "  }",
+          "coverage": ""
+        },
+        "414": {
+          "source": "  return 'M' + points + z;",
+          "coverage": 0
+        },
+        "415": {
+          "source": "}",
+          "coverage": ""
+        },
+        "416": {
+          "source": "",
+          "coverage": ""
+        },
+        "417": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "418": {
+          "source": " * 折线，polyLine",
+          "coverage": ""
+        },
+        "419": {
+          "source": " * @class Chart.Canvas.Shape.PolyLine",
+          "coverage": ""
+        },
+        "420": {
+          "source": " * @extends Chart.Canvas.Shape.Path",
+          "coverage": ""
+        },
+        "421": {
+          "source": " */",
+          "coverage": ""
+        },
+        "422": {
+          "source": "var PolyLine = function(cfg){",
+          "coverage": 1
+        },
+        "423": {
+          "source": "  PolyLine.superclass.constructor.call(this,cfg);",
+          "coverage": 0
+        },
+        "424": {
+          "source": "};",
+          "coverage": ""
+        },
+        "425": {
+          "source": "",
+          "coverage": ""
+        },
+        "426": {
+          "source": "PolyLine.ATTRS = {",
+          "coverage": 1
+        },
+        "427": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "428": {
+          "source": "   * 定点集合，可以是字符串、或者数组",
+          "coverage": ""
+        },
+        "429": {
+          "source": "   *",
+          "coverage": ""
+        },
+        "430": {
+          "source": "   *  - 字符串： '0,0 25,25 31,50'",
+          "coverage": ""
+        },
+        "431": {
+          "source": "   *  - 数组 ： ['0,0','25,25','31,50']",
+          "coverage": ""
+        },
+        "432": {
+          "source": "   *  ",
+          "coverage": ""
+        },
+        "433": {
+          "source": "   * @type {Array|String}",
+          "coverage": ""
+        },
+        "434": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "435": {
+          "source": "  points : []",
+          "coverage": ""
+        },
+        "436": {
+          "source": "};",
+          "coverage": ""
+        },
+        "437": {
+          "source": "",
+          "coverage": ""
+        },
+        "438": {
+          "source": "Util.extend(PolyLine,Path);",
+          "coverage": 1
+        },
+        "439": {
+          "source": "",
+          "coverage": ""
+        },
+        "440": {
+          "source": "Util.augment(PolyLine,{",
+          "coverage": 1
+        },
+        "441": {
+          "source": "  //设置顶点",
+          "coverage": ""
+        },
+        "442": {
+          "source": "  __setPoints : function(value){",
+          "coverage": ""
+        },
+        "443": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "444": {
+          "source": "      el = _self.get('el'),",
+          "coverage": ""
+        },
+        "445": {
+          "source": "      path = points2path(value,'');",
+          "coverage": ""
+        },
+        "446": {
+          "source": "    _self.attr('path',path);",
+          "coverage": 0
+        },
+        "447": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "448": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "449": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "450": {
+          "source": "   * 格式化初始化配置项",
+          "coverage": ""
+        },
+        "451": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "452": {
+          "source": "  parseElCfg : function(attrs){",
+          "coverage": ""
+        },
+        "453": {
+          "source": "    attrs.type = 'path'; //将线转换成path",
+          "coverage": 0
+        },
+        "454": {
+          "source": "    attrs.path = points2path(attrs.points,'');",
+          "coverage": 0
+        },
+        "455": {
+          "source": "    return attrs;",
+          "coverage": 0
+        },
+        "456": {
+          "source": "  }",
+          "coverage": ""
+        },
+        "457": {
+          "source": "",
+          "coverage": ""
+        },
+        "458": {
+          "source": "});",
+          "coverage": ""
+        },
+        "459": {
+          "source": "",
+          "coverage": ""
+        },
+        "460": {
+          "source": "Shape.PolyLine = PolyLine;",
+          "coverage": 1
+        },
+        "461": {
+          "source": "",
+          "coverage": ""
+        },
+        "462": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "463": {
+          "source": " * 多边形",
+          "coverage": ""
+        },
+        "464": {
+          "source": " * @class Chart.Canvas.Shape.Polygon",
+          "coverage": ""
+        },
+        "465": {
+          "source": " * @extends Chart.Canvas.Shape.Path",
+          "coverage": ""
+        },
+        "466": {
+          "source": " */",
+          "coverage": ""
+        },
+        "467": {
+          "source": "var Polygon = function(cfg){",
+          "coverage": 1
+        },
+        "468": {
+          "source": "  PolyLine.superclass.constructor.call(this,cfg);",
+          "coverage": 0
+        },
+        "469": {
+          "source": "};",
+          "coverage": ""
+        },
+        "470": {
+          "source": "",
+          "coverage": ""
+        },
+        "471": {
+          "source": "Polygon.ATTRS = {",
+          "coverage": 1
+        },
+        "472": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "473": {
+          "source": "   * 定点集合，可以是字符串、或者数组",
+          "coverage": ""
+        },
+        "474": {
+          "source": "   *",
+          "coverage": ""
+        },
+        "475": {
+          "source": "   *  - 字符串： '0,0 25,25 31,50'",
+          "coverage": ""
+        },
+        "476": {
+          "source": "   *  - 数组 ： ['0,0','25,25','31,50']",
+          "coverage": ""
+        },
+        "477": {
+          "source": "   *  ",
+          "coverage": ""
+        },
+        "478": {
+          "source": "   * @type {Array|String}",
+          "coverage": ""
+        },
+        "479": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "480": {
+          "source": "  points : []",
+          "coverage": ""
+        },
+        "481": {
+          "source": "};",
+          "coverage": ""
+        },
+        "482": {
+          "source": "",
+          "coverage": ""
+        },
+        "483": {
+          "source": "Util.extend(Polygon,Path);",
+          "coverage": 1
+        },
+        "484": {
+          "source": "",
+          "coverage": ""
+        },
+        "485": {
+          "source": "Util.augment(Polygon,{",
+          "coverage": 1
+        },
+        "486": {
+          "source": "  //设置顶点",
+          "coverage": ""
+        },
+        "487": {
+          "source": "  __setPoints : function(value){",
+          "coverage": ""
+        },
+        "488": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "489": {
+          "source": "      el = _self.get('el'),",
+          "coverage": ""
+        },
+        "490": {
+          "source": "      path = points2path(value,'z');",
+          "coverage": ""
+        },
+        "491": {
+          "source": "    _self.attr('path',path);",
+          "coverage": 0
+        },
+        "492": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "493": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "494": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "495": {
+          "source": "   * 格式化初始化配置项",
+          "coverage": ""
+        },
+        "496": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "497": {
+          "source": "  parseElCfg : function(attrs){",
+          "coverage": ""
+        },
+        "498": {
+          "source": "    attrs.type = 'path'; //将线转换成path",
+          "coverage": 0
+        },
+        "499": {
+          "source": "    attrs.path = points2path(attrs.points,'z');",
+          "coverage": 0
+        },
+        "500": {
+          "source": "    return attrs;",
+          "coverage": 0
+        },
+        "501": {
+          "source": "  }",
+          "coverage": ""
+        },
+        "502": {
+          "source": "",
+          "coverage": ""
+        },
+        "503": {
+          "source": "});",
+          "coverage": ""
+        },
+        "504": {
+          "source": "",
+          "coverage": ""
+        },
+        "505": {
+          "source": "Shape.Polygon = Polygon;",
+          "coverage": 1
+        },
+        "506": {
+          "source": "",
+          "coverage": ""
+        },
+        "507": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "508": {
+          "source": " * 文本",
+          "coverage": ""
+        },
+        "509": {
+          "source": " * @class Chart.Canvas.Shape.Text",
+          "coverage": ""
+        },
+        "510": {
+          "source": " * @extends Chart.Canvas.Shape",
+          "coverage": ""
+        },
+        "511": {
+          "source": " */",
+          "coverage": ""
+        },
+        "512": {
+          "source": "var Text = function(cfg){",
+          "coverage": 1
+        },
+        "513": {
+          "source": "  Text.superclass.constructor.call(this,cfg);",
+          "coverage": 0
+        },
+        "514": {
+          "source": "};",
+          "coverage": ""
+        },
+        "515": {
+          "source": "",
+          "coverage": ""
+        },
+        "516": {
+          "source": "Text.ATTRS = {",
+          "coverage": 1
+        },
+        "517": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "518": {
+          "source": "   * x轴坐标",
+          "coverage": ""
+        },
+        "519": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "520": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "521": {
+          "source": "  x : {},",
+          "coverage": ""
+        },
+        "522": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "523": {
+          "source": "   * y轴坐标",
+          "coverage": ""
+        },
+        "524": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "525": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "526": {
+          "source": "  y : {},",
+          "coverage": ""
+        },
+        "527": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "528": {
+          "source": "   * 显示的文本",
+          "coverage": ""
+        },
+        "529": {
+          "source": "   * @type {String}",
+          "coverage": ""
+        },
+        "530": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "531": {
+          "source": "  text : {},",
+          "coverage": ""
+        },
+        "532": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "533": {
+          "source": "   * 字体相关的属性，也可以单独设置其中的属性: font-family,font-weight....",
+          "coverage": ""
+        },
+        "534": {
+          "source": "   * @type {String}",
+          "coverage": ""
+        },
+        "535": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "536": {
+          "source": "  'font' : {},",
+          "coverage": ""
+        },
+        "537": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "538": {
+          "source": "   * 文本的对齐方式：默认对齐方式: 'middle'",
+          "coverage": ""
+        },
+        "539": {
+          "source": "   * @type {String}",
+          "coverage": ""
+        },
+        "540": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "541": {
+          "source": "  'text-anchor' : {}",
+          "coverage": ""
+        },
+        "542": {
+          "source": "};",
+          "coverage": ""
+        },
+        "543": {
+          "source": "",
+          "coverage": ""
+        },
+        "544": {
+          "source": "Util.extend(Text,Shape);",
+          "coverage": 1
+        },
+        "545": {
+          "source": "",
+          "coverage": ""
+        },
+        "546": {
+          "source": "Shape.Text = Text;",
+          "coverage": 1
+        },
+        "547": {
+          "source": "",
+          "coverage": ""
+        },
+        "548": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "549": {
+          "source": " * @class Chart.Canvas.Shape.Label",
+          "coverage": ""
+        },
+        "550": {
+          "source": " * 文本标签，继承自文本，但是提供了rotate属性",
+          "coverage": ""
+        },
+        "551": {
+          "source": " * @extends Chart.Canvas.Shape.Text",
+          "coverage": ""
+        },
+        "552": {
+          "source": " */",
+          "coverage": ""
+        },
+        "553": {
+          "source": "var Label = function(cfg){",
+          "coverage": 1
+        },
+        "554": {
+          "source": "  Label.superclass.constructor.call(this,cfg);",
+          "coverage": 0
+        },
+        "555": {
+          "source": "};",
+          "coverage": ""
+        },
+        "556": {
+          "source": "",
+          "coverage": ""
+        },
+        "557": {
+          "source": "Util.extend(Label,Text);",
+          "coverage": 1
+        },
+        "558": {
+          "source": "",
+          "coverage": ""
+        },
+        "559": {
+          "source": "Label.ATTRS = {",
+          "coverage": 1
+        },
+        "560": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "561": {
+          "source": "   * 旋转角度",
+          "coverage": ""
+        },
+        "562": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "563": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "564": {
+          "source": "  rotate : {}",
+          "coverage": ""
+        },
+        "565": {
+          "source": "};",
+          "coverage": ""
+        },
+        "566": {
+          "source": "",
+          "coverage": ""
+        },
+        "567": {
+          "source": "Util.augment(Label,{",
+          "coverage": 1
+        },
+        "568": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "569": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "570": {
+          "source": "   * 格式化初始化配置项",
+          "coverage": ""
+        },
+        "571": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "572": {
+          "source": "  parseElCfg : function(attrs){",
+          "coverage": ""
+        },
+        "573": {
+          "source": "    attrs.type = 'text';",
+          "coverage": 0
+        },
+        "574": {
+          "source": "    if(attrs.rotate){",
+          "coverage": 0
+        },
+        "575": {
+          "source": "      attrs.transform = Util.substitute('r{rotate} {x} {y}',attrs);",
+          "coverage": 0
+        },
+        "576": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "577": {
+          "source": "    ",
+          "coverage": ""
+        },
+        "578": {
+          "source": "    return attrs;",
+          "coverage": 0
+        },
+        "579": {
+          "source": "  }",
+          "coverage": ""
+        },
+        "580": {
+          "source": "});",
+          "coverage": ""
+        },
+        "581": {
+          "source": "",
+          "coverage": ""
+        },
+        "582": {
+          "source": "Shape.Label = Label;",
+          "coverage": 1
+        },
+        "583": {
+          "source": "",
+          "coverage": ""
+        },
+        "584": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "585": {
+          "source": " * @class Chart.Canvas.Shape.Marker",
+          "coverage": ""
+        },
+        "586": {
+          "source": " * 用于标示节点的图形",
+          "coverage": ""
+        },
+        "587": {
+          "source": " * @extends Chart.Canvas.Shape",
+          "coverage": ""
+        },
+        "588": {
+          "source": " */",
+          "coverage": ""
+        },
+        "589": {
+          "source": "var Marker = function(cfg){",
+          "coverage": 1
+        },
+        "590": {
+          "source": "  Marker.superclass.constructor.call(this,cfg);",
+          "coverage": 0
+        },
+        "591": {
+          "source": "};",
+          "coverage": ""
+        },
+        "592": {
+          "source": "",
+          "coverage": ""
+        },
+        "593": {
+          "source": "Marker.ATTRS = {",
+          "coverage": 1
+        },
+        "594": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "595": {
+          "source": "   * 类型 \"circle\", \"square\", \"diamond\", \"triangle\" and \"triangle-down\"；如果是 \"url(xxx)\"则是图片；custom则需要指定路径",
+          "coverage": ""
+        },
+        "596": {
+          "source": "   * @type {String}",
+          "coverage": ""
+        },
+        "597": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "598": {
+          "source": "  symbol :{",
+          "coverage": ""
+        },
+        "599": {
+          "source": "    value : 'custom'",
+          "coverage": ""
+        },
+        "600": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "601": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "602": {
+          "source": "   * 半径",
+          "coverage": ""
+        },
+        "603": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "604": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "605": {
+          "source": "  radius : {",
+          "coverage": ""
+        },
+        "606": {
+          "source": "    value : 5",
+          "coverage": ""
+        },
+        "607": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "608": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "609": {
+          "source": "   * 如果类型为\"custom\"时指定路径",
+          "coverage": ""
+        },
+        "610": {
+          "source": "   * @type {Object}",
+          "coverage": ""
+        },
+        "611": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "612": {
+          "source": "  path : {",
+          "coverage": ""
+        },
+        "613": {
+          "source": "",
+          "coverage": ""
+        },
+        "614": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "615": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "616": {
+          "source": "   * 起始x轴位置",
+          "coverage": ""
+        },
+        "617": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "618": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "619": {
+          "source": "  x : {",
+          "coverage": ""
+        },
+        "620": {
+          "source": "",
+          "coverage": ""
+        },
+        "621": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "622": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "623": {
+          "source": "   * 起始y轴位置",
+          "coverage": ""
+        },
+        "624": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "625": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "626": {
+          "source": "  y : {",
+          "coverage": ""
+        },
+        "627": {
+          "source": "",
+          "coverage": ""
+        },
+        "628": {
+          "source": "  }",
+          "coverage": ""
+        },
+        "629": {
+          "source": "};",
+          "coverage": ""
+        },
+        "630": {
+          "source": "",
+          "coverage": ""
+        },
+        "631": {
+          "source": "Marker.Symbols = {",
+          "coverage": 1
+        },
+        "632": {
+          "source": "  //圆",
+          "coverage": ""
+        },
+        "633": {
+          "source": "  circle : function(x,y,r){",
+          "coverage": ""
+        },
+        "634": {
+          "source": "    return [['M',x,y - r],['a',r,r,0,1,1,0,2*r],['a',r,r,0,1,1,0,-2*r],['z']];",
+          "coverage": 0
+        },
+        "635": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "636": {
+          "source": "  //正方形",
+          "coverage": ""
+        },
+        "637": {
+          "source": "  square : function(x,y,r){",
+          "coverage": ""
+        },
+        "638": {
+          "source": "    return [['M',x-r,y-r],['L',x + r,y-r],['L',x + r,y + r],['L',x - r,y + r],['z']];",
+          "coverage": 0
+        },
+        "639": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "640": {
+          "source": "  //菱形",
+          "coverage": ""
+        },
+        "641": {
+          "source": "  diamond : function(x,y,r){",
+          "coverage": ""
+        },
+        "642": {
+          "source": "    return [['M',x - r,y],['L',x,y - r],['L',x + r, y],['L',x,y + r],['z']];",
+          "coverage": 0
+        },
+        "643": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "644": {
+          "source": "  //三角形",
+          "coverage": ""
+        },
+        "645": {
+          "source": "  triangle : function(x,y,r){",
+          "coverage": ""
+        },
+        "646": {
+          "source": "    var diffX = r / 0.866,",
+          "coverage": 0
+        },
+        "647": {
+          "source": "      diffY =  r;",
+          "coverage": ""
+        },
+        "648": {
+          "source": "    return [['M',x,y-r],['L',x + diffX,y + diffY],['L',x - diffX, y + diffY],['z']];",
+          "coverage": 0
+        },
+        "649": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "650": {
+          "source": "  //倒三角形",
+          "coverage": ""
+        },
+        "651": {
+          "source": "  'triangle-down' : function(x,y,r){",
+          "coverage": ""
+        },
+        "652": {
+          "source": "    var diffX = r / 0.866,",
+          "coverage": 0
+        },
+        "653": {
+          "source": "      diffY =  r;",
+          "coverage": ""
+        },
+        "654": {
+          "source": "    return [['M',x,y + r],['L',x + diffX, y - diffY],['L',x - diffX,y - diffY],['z']];",
+          "coverage": 0
+        },
+        "655": {
+          "source": "  }",
+          "coverage": ""
+        },
+        "656": {
+          "source": "};",
+          "coverage": ""
+        },
+        "657": {
+          "source": "",
+          "coverage": ""
+        },
+        "658": {
+          "source": "",
+          "coverage": ""
+        },
+        "659": {
+          "source": "",
+          "coverage": ""
+        },
+        "660": {
+          "source": "Util.extend(Marker,Shape);",
+          "coverage": 1
+        },
+        "661": {
+          "source": "",
+          "coverage": ""
+        },
+        "662": {
+          "source": "Util.augment(Marker,{",
+          "coverage": 1
+        },
+        "663": {
+          "source": "  //设置半径",
+          "coverage": ""
+        },
+        "664": {
+          "source": "  __setRadius : function(v){",
+          "coverage": ""
+        },
+        "665": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "666": {
+          "source": "      attrs = _self.get('attrs');",
+          "coverage": ""
+        },
+        "667": {
+          "source": "",
+          "coverage": ""
+        },
+        "668": {
+          "source": "    _self._setSize(attrs.x,attrs.y,v);",
+          "coverage": 0
+        },
+        "669": {
+          "source": "",
+          "coverage": ""
+        },
+        "670": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "671": {
+          "source": "  __getRadius : function(){",
+          "coverage": ""
+        },
+        "672": {
+          "source": "    return this.get('attrs').radius;",
+          "coverage": 0
+        },
+        "673": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "674": {
+          "source": "  //设置x",
+          "coverage": ""
+        },
+        "675": {
+          "source": "  __setX : function(x){",
+          "coverage": ""
+        },
+        "676": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "677": {
+          "source": "      attrs = _self.get('attrs');",
+          "coverage": ""
+        },
+        "678": {
+          "source": "",
+          "coverage": ""
+        },
+        "679": {
+          "source": "    _self._setSize(x,attrs.y,attrs.radius);",
+          "coverage": 0
+        },
+        "680": {
+          "source": "",
+          "coverage": ""
+        },
+        "681": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "682": {
+          "source": "  __getX : function(){",
+          "coverage": ""
+        },
+        "683": {
+          "source": "    return this.get('attrs').x;",
+          "coverage": 0
+        },
+        "684": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "685": {
+          "source": "  //设置y",
+          "coverage": ""
+        },
+        "686": {
+          "source": "  __setY : function(y){",
+          "coverage": ""
+        },
+        "687": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "688": {
+          "source": "      attrs = _self.get('attrs');",
+          "coverage": ""
+        },
+        "689": {
+          "source": "",
+          "coverage": ""
+        },
+        "690": {
+          "source": "    _self._setSize(attrs.x,y,attrs.radius);",
+          "coverage": 0
+        },
+        "691": {
+          "source": "",
+          "coverage": ""
+        },
+        "692": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "693": {
+          "source": "  __getY : function(){",
+          "coverage": ""
+        },
+        "694": {
+          "source": "    return this.get('attrs').y;",
+          "coverage": 0
+        },
+        "695": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "696": {
+          "source": "  __getSymbol : function(){",
+          "coverage": ""
+        },
+        "697": {
+          "source": "    return this.get('attrs').symbol;",
+          "coverage": 0
+        },
+        "698": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "699": {
+          "source": "  //设置大小，位置",
+          "coverage": ""
+        },
+        "700": {
+          "source": "  _setSize : function(x,y,radius){",
+          "coverage": ""
+        },
+        "701": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "702": {
+          "source": "      attrs = _self.get('attrs'),",
+          "coverage": ""
+        },
+        "703": {
+          "source": "      el = _self.get('el');",
+          "coverage": ""
+        },
+        "704": {
+          "source": "    if(el.type !== 'image'){",
+          "coverage": 0
+        },
+        "705": {
+          "source": "      var cfg = {",
+          "coverage": 0
+        },
+        "706": {
+          "source": "        x : x,",
+          "coverage": ""
+        },
+        "707": {
+          "source": "        y : y,",
+          "coverage": ""
+        },
+        "708": {
+          "source": "        radius : radius",
+          "coverage": ""
+        },
+        "709": {
+          "source": "      };",
+          "coverage": ""
+        },
+        "710": {
+          "source": "      Util.mix(attrs,cfg);",
+          "coverage": 0
+        },
+        "711": {
+          "source": "      var path = _self._getPath(attrs);",
+          "coverage": 0
+        },
+        "712": {
+          "source": "      el.attr('path',path);",
+          "coverage": 0
+        },
+        "713": {
+          "source": "    }else{",
+          "coverage": ""
+        },
+        "714": {
+          "source": "      Util.mix(attrs,{",
+          "coverage": 0
+        },
+        "715": {
+          "source": "        width : radius * 2,",
+          "coverage": ""
+        },
+        "716": {
+          "source": "        height : radius * 2,",
+          "coverage": ""
+        },
+        "717": {
+          "source": "        x : x - (radius - attrs.radius),",
+          "coverage": ""
+        },
+        "718": {
+          "source": "        y : y - (radius - attrs.radius),",
+          "coverage": ""
+        },
+        "719": {
+          "source": "        radius : radius",
+          "coverage": ""
+        },
+        "720": {
+          "source": "      });",
+          "coverage": ""
+        },
+        "721": {
+          "source": "      el.attr(attrs);",
+          "coverage": 0
+        },
+        "722": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "723": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "724": {
+          "source": "  animate : function(params,ms,easing,callback){",
+          "coverage": ""
+        },
+        "725": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "726": {
+          "source": "      attrs = _self.get('attrs'),",
+          "coverage": ""
+        },
+        "727": {
+          "source": "      path;",
+          "coverage": ""
+        },
+        "728": {
+          "source": "        ",
+          "coverage": ""
+        },
+        "729": {
+          "source": "    if(_self.get('el').type == 'image'){",
+          "coverage": 0
+        },
+        "730": {
+          "source": "      var radius = params.radius || _self.attr('radius');",
+          "coverage": 0
+        },
+        "731": {
+          "source": "      params.x = params.x - radius;",
+          "coverage": 0
+        },
+        "732": {
+          "source": "      params.y = params.y - radius;",
+          "coverage": 0
+        },
+        "733": {
+          "source": "      Util.mix(attrs,{",
+          "coverage": 0
+        },
+        "734": {
+          "source": "        x : params.x,",
+          "coverage": ""
+        },
+        "735": {
+          "source": "        y : params.y",
+          "coverage": ""
+        },
+        "736": {
+          "source": "      });",
+          "coverage": ""
+        },
+        "737": {
+          "source": "      _self.get('el').animate(params,ms,easing,callback);",
+          "coverage": 0
+        },
+        "738": {
+          "source": "    }else{",
+          "coverage": ""
+        },
+        "739": {
+          "source": "      Util.mix(attrs,{",
+          "coverage": 0
+        },
+        "740": {
+          "source": "        x : params.x,",
+          "coverage": ""
+        },
+        "741": {
+          "source": "        y : params.y",
+          "coverage": ""
+        },
+        "742": {
+          "source": "      });",
+          "coverage": ""
+        },
+        "743": {
+          "source": "      path = _self._getPath(attrs);",
+          "coverage": 0
+        },
+        "744": {
+          "source": "      _self.get('el').animate({path : path},ms,easing,callback);",
+          "coverage": 0
+        },
+        "745": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "746": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "747": {
+          "source": "",
+          "coverage": ""
+        },
+        "748": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "749": {
+          "source": "   * @protected",
+          "coverage": ""
+        },
+        "750": {
+          "source": "   * 格式化初始化配置项",
+          "coverage": ""
+        },
+        "751": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "752": {
+          "source": "  parseElCfg : function(attrs){",
+          "coverage": ""
+        },
+        "753": {
+          "source": "    var _self = this,",
+          "coverage": 0
+        },
+        "754": {
+          "source": "      symbol = attrs.symbol,",
+          "coverage": ""
+        },
+        "755": {
+          "source": "      radius = attrs.radius || 5;",
+          "coverage": ""
+        },
+        "756": {
+          "source": "    if(symbol && !Util.isFunction(symbol) && symbol.indexOf('url') != -1){ //图片",
+          "coverage": 0
+        },
+        "757": {
+          "source": "      attrs.type = 'image';",
+          "coverage": 0
+        },
+        "758": {
+          "source": "      attrs.src = symbol.replace(/url\\((.*)\\)/,'$1');",
+          "coverage": 0
+        },
+        "759": {
+          "source": "      attrs.width = attrs.radius * 2;",
+          "coverage": 0
+        },
+        "760": {
+          "source": "      attrs.height = attrs.radius * 2;",
+          "coverage": 0
+        },
+        "761": {
+          "source": "      if (Util.vml) {",
+          "coverage": 0
+        },
+        "762": {
+          "source": "        attrs.x -= radius-1,",
+          "coverage": 0
+        },
+        "763": {
+          "source": "        attrs.y -= radius-1;",
+          "coverage": ""
+        },
+        "764": {
+          "source": "      } else {",
+          "coverage": ""
+        },
+        "765": {
+          "source": "        attrs.x -= radius,",
+          "coverage": 0
+        },
+        "766": {
+          "source": "        attrs.y -= radius;",
+          "coverage": ""
+        },
+        "767": {
+          "source": "      }",
+          "coverage": ""
+        },
+        "768": {
+          "source": "    }else{",
+          "coverage": ""
+        },
+        "769": {
+          "source": "      attrs.type = 'path';",
+          "coverage": 0
+        },
+        "770": {
+          "source": "      attrs.path = _self._getPath(attrs);",
+          "coverage": 0
+        },
+        "771": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "772": {
+          "source": "    return attrs;",
+          "coverage": 0
+        },
+        "773": {
+          "source": "  },",
+          "coverage": ""
+        },
+        "774": {
+          "source": "  //获取path",
+          "coverage": ""
+        },
+        "775": {
+          "source": "  _getPath : function(attrs){",
+          "coverage": ""
+        },
+        "776": {
+          "source": "    if(!attrs.symbol && attrs.path){",
+          "coverage": 0
+        },
+        "777": {
+          "source": "      return  Util.substitute(attrs.path,attrs);",
+          "coverage": 0
+        },
+        "778": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "779": {
+          "source": "    var method;",
+          "coverage": 0
+        },
+        "780": {
+          "source": "",
+          "coverage": ""
+        },
+        "781": {
+          "source": "    if(Util.isFunction(attrs.symbol)){",
+          "coverage": 0
+        },
+        "782": {
+          "source": "      method = attrs.symbol;",
+          "coverage": 0
+        },
+        "783": {
+          "source": "    }else{",
+          "coverage": ""
+        },
+        "784": {
+          "source": "      method = Marker.Symbols[attrs.symbol];",
+          "coverage": 0
+        },
+        "785": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "786": {
+          "source": "    ",
+          "coverage": ""
+        },
+        "787": {
+          "source": "    if(method){",
+          "coverage": 0
+        },
+        "788": {
+          "source": "      return method(attrs.x,attrs.y,attrs.radius)",
+          "coverage": 0
+        },
+        "789": {
+          "source": "    }else{",
+          "coverage": ""
+        },
+        "790": {
+          "source": "      throw 'not support this type ' + attrs.symbol;",
+          "coverage": 0
+        },
+        "791": {
+          "source": "    }",
+          "coverage": ""
+        },
+        "792": {
+          "source": "  }",
+          "coverage": ""
+        },
+        "793": {
+          "source": "",
+          "coverage": ""
+        },
+        "794": {
+          "source": "});",
+          "coverage": ""
+        },
+        "795": {
+          "source": "",
+          "coverage": ""
+        },
+        "796": {
+          "source": "Shape.Marker = Marker;",
+          "coverage": 1
+        },
+        "797": {
+          "source": "",
+          "coverage": ""
+        },
+        "798": {
+          "source": "",
+          "coverage": ""
+        },
+        "799": {
+          "source": "",
+          "coverage": ""
+        },
+        "800": {
+          "source": "/**",
+          "coverage": ""
+        },
+        "801": {
+          "source": " * @class Chart.Canvas.Shape.Image",
+          "coverage": ""
+        },
+        "802": {
+          "source": " * 图片",
+          "coverage": ""
+        },
+        "803": {
+          "source": " * @extends Chart.Canvas.Shape",
+          "coverage": ""
+        },
+        "804": {
+          "source": " */",
+          "coverage": ""
+        },
+        "805": {
+          "source": "var Image = function(cfg){",
+          "coverage": 1
+        },
+        "806": {
+          "source": "  Image.superclass.constructor.call(this,cfg);",
+          "coverage": 0
+        },
+        "807": {
+          "source": "};",
+          "coverage": ""
+        },
+        "808": {
+          "source": "",
+          "coverage": ""
+        },
+        "809": {
+          "source": "Image.ATTRS = {",
+          "coverage": 1
+        },
+        "810": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "811": {
+          "source": "   * 路径",
+          "coverage": ""
+        },
+        "812": {
+          "source": "   * @type {String}",
+          "coverage": ""
+        },
+        "813": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "814": {
+          "source": "  src : {}, ",
+          "coverage": ""
+        },
+        "815": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "816": {
+          "source": "   * x轴位置",
+          "coverage": ""
+        },
+        "817": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "818": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "819": {
+          "source": "  x : {}, ",
+          "coverage": ""
+        },
+        "820": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "821": {
+          "source": "   * y轴位置",
+          "coverage": ""
+        },
+        "822": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "823": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "824": {
+          "source": "  y : {}, ",
+          "coverage": ""
+        },
+        "825": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "826": {
+          "source": "   * 宽度",
+          "coverage": ""
+        },
+        "827": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "828": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "829": {
+          "source": "  width : {}, ",
+          "coverage": ""
+        },
+        "830": {
+          "source": "  /**",
+          "coverage": ""
+        },
+        "831": {
+          "source": "   * 高度",
+          "coverage": ""
+        },
+        "832": {
+          "source": "   * @type {Number}",
+          "coverage": ""
+        },
+        "833": {
+          "source": "   */",
+          "coverage": ""
+        },
+        "834": {
+          "source": "  height : {}",
+          "coverage": ""
+        },
+        "835": {
+          "source": "}",
+          "coverage": ""
+        },
+        "836": {
+          "source": "",
+          "coverage": ""
+        },
+        "837": {
+          "source": "Util.extend(Image,Shape);",
+          "coverage": 1
+        },
+        "838": {
+          "source": "",
+          "coverage": ""
+        },
+        "839": {
+          "source": "Shape.Image = Image;",
+          "coverage": 1
+        },
+        "840": {
+          "source": "",
+          "coverage": ""
+        },
+        "841": {
+          "source": "module.exports = Shape;",
+          "coverage": 1
+        },
+        "842": {
+          "source": "",
+          "coverage": ""
+        }
+      }
+    },
+    {
+      "filename": "/Users/dxq613/Desktop/work/web/graphic/svg/src/util.js",
+      "coverage": 100,
+      "hits": 2,
+      "misses": 0,
+      "sloc": 2,
+      "source": {
+        "1": {
+          "source": "",
+          "coverage": ""
+        },
+        "2": {
+          "source": "var Util = require('svg-util');",
+          "coverage": 1
+        },
+        "3": {
+          "source": "",
+          "coverage": ""
+        },
+        "4": {
+          "source": "module.exports = Util;",
+          "coverage": 1
+        }
+      }
+    }
+  ],
+  "stats": {
+    "suites": 5,
+    "tests": 15,
+    "passes": 15,
+    "pending": 0,
+    "failures": 0,
+    "start": "2014-10-02T08:03:22.813Z",
+    "end": "2014-10-02T08:03:22.847Z",
+    "duration": 34
+  },
+  "tests": [
+    {
+      "title": "测试生成dom",
+      "fullTitle": "svg canvas create 测试生成dom",
+      "duration": 1
+    },
+    {
+      "title": "测试默认属性",
+      "fullTitle": "svg canvas create 测试默认属性",
+      "duration": 2
+    },
+    {
+      "title": "test getPoint",
+      "fullTitle": "svg canvas create test getPoint",
+      "duration": 1
+    },
+    {
+      "title": "destroy",
+      "fullTitle": "svg canvas create destroy",
+      "duration": 2
+    },
+    {
+      "title": "测试生成dom",
+      "fullTitle": "init viewbox 测试生成dom",
+      "duration": 0
+    },
+    {
+      "title": "测试默认属性",
+      "fullTitle": "init viewbox 测试默认属性",
+      "duration": 2
+    },
+    {
+      "title": "test getPoint",
+      "fullTitle": "init viewbox test getPoint",
+      "duration": 2
+    },
+    {
+      "title": "更改宽度,高度",
+      "fullTitle": "init viewbox 测试画板操作 更改宽度,高度",
+      "duration": 1
+    },
+    {
+      "title": "更改viewbox",
+      "fullTitle": "init viewbox 测试画板操作 更改viewbox",
+      "duration": 1
+    },
+    {
+      "title": "test getPoint",
+      "fullTitle": "init viewbox 测试画板操作 test getPoint",
+      "duration": 5
+    },
+    {
+      "title": "test relative x",
+      "fullTitle": "init viewbox 测试画板操作 test relative x",
+      "duration": 1
+    },
+    {
+      "title": "更改viewbox",
+      "fullTitle": "init viewbox 测试画板操作 更改viewbox",
+      "duration": 1
+    },
+    {
+      "title": "on off",
+      "fullTitle": "init viewbox evnet on off",
+      "duration": 3
+    },
+    {
+      "title": "custom event",
+      "fullTitle": "init viewbox evnet custom event",
+      "duration": 1
+    },
+    {
+      "title": "normal usage",
+      "fullTitle": "svg normal usage",
+      "duration": 0
+    }
+  ],
+  "failures": [],
+  "passes": [
+    {
+      "title": "测试生成dom",
+      "fullTitle": "svg canvas create 测试生成dom",
+      "duration": 1
+    },
+    {
+      "title": "测试默认属性",
+      "fullTitle": "svg canvas create 测试默认属性",
+      "duration": 2
+    },
+    {
+      "title": "test getPoint",
+      "fullTitle": "svg canvas create test getPoint",
+      "duration": 1
+    },
+    {
+      "title": "destroy",
+      "fullTitle": "svg canvas create destroy",
+      "duration": 2
+    },
+    {
+      "title": "测试生成dom",
+      "fullTitle": "init viewbox 测试生成dom",
+      "duration": 0
+    },
+    {
+      "title": "测试默认属性",
+      "fullTitle": "init viewbox 测试默认属性",
+      "duration": 2
+    },
+    {
+      "title": "test getPoint",
+      "fullTitle": "init viewbox test getPoint",
+      "duration": 2
+    },
+    {
+      "title": "更改宽度,高度",
+      "fullTitle": "init viewbox 测试画板操作 更改宽度,高度",
+      "duration": 1
+    },
+    {
+      "title": "更改viewbox",
+      "fullTitle": "init viewbox 测试画板操作 更改viewbox",
+      "duration": 1
+    },
+    {
+      "title": "test getPoint",
+      "fullTitle": "init viewbox 测试画板操作 test getPoint",
+      "duration": 5
+    },
+    {
+      "title": "test relative x",
+      "fullTitle": "init viewbox 测试画板操作 test relative x",
+      "duration": 1
+    },
+    {
+      "title": "更改viewbox",
+      "fullTitle": "init viewbox 测试画板操作 更改viewbox",
+      "duration": 1
+    },
+    {
+      "title": "on off",
+      "fullTitle": "init viewbox evnet on off",
+      "duration": 3
+    },
+    {
+      "title": "custom event",
+      "fullTitle": "init viewbox evnet custom event",
+      "duration": 1
+    },
+    {
+      "title": "normal usage",
+      "fullTitle": "svg normal usage",
+      "duration": 0
+    }
+  ]
+}

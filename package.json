@@ -1,0 +1,29 @@
+{
+  "name": "svg-canvas",
+  "version": "1.0.0",
+  "description": "Object-oriented SVG operation",
+  "keywords": ["svg"],
+  "homepage": "https://github.com/acharts/svg-canvas",
+  "author": "dxq613@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acharts/svg-canvas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/acharts/svg-canvas/issues"
+  },
+  "licenses": "MIT",
+  "spm": {
+    "main": "index.js",
+    "dependencies": {
+      "svg-util" : "1.0.0"
+    },
+    "devDependencies": {
+      "expect.js": "0.3.1",
+      "sinon" : "1.6.0",
+      "event-simulate" : "1.0.0",
+      "jquery" : "1.9.1"
+    },
+    "tests": "tests/*.js"
+  }
+}
