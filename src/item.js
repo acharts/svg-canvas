@@ -2,7 +2,7 @@
  * @fileOverview 画布内部的元素扩展
  * @ignore
  */
-  
+
 var Util = require('./util');
 
 
@@ -88,7 +88,7 @@ Util.augment(Item,{
   },
   /**
    * 放大
-   * @param  {Number} sx x轴方向的倍数 
+   * @param  {Number} sx x轴方向的倍数
    * @param  {Number} sy y轴方向的倍数
    * @param  {Number} cx x轴方向扩展的中心
    * @param  {Number} cy y轴方向扩展的中心
